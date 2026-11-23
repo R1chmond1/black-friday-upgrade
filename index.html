@@ -1,2326 +1,458 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b1018" />
-    <meta
-      name="description"
-      content="پیشنهادهای ویژه ارتقای فروشگاه اینترنتی برای بلک فرایدی - Arsam Samadian"
-    />
-    <title>Black Friday Upgrade | Arsam Samadian</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      :root {
-        --bg: #0b1018;
-        --bg-soft: #101722;
-        --surface: #151e2b;
-        --surface-2: #1b2635;
-        --text: #f3f5f8;
-        --muted: #a0aaba;
-        --subtle: #758196;
-        --line: rgba(255, 255, 255, 0.085);
-        --red: #ed386d;
-        --red-light: #ff7197;
-        --gold: #e5c18a;
-        --green: #9de1bd;
-        --radius: 18px;
-        --container: 1160px;
-        --shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 90px;
-      }
-      body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: "Vazirmatn", Tahoma, sans-serif;
-        line-height: 1.85;
-        font-size: 14px;
-        overflow-x: hidden;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      button,
-      input {
-        font-family: inherit;
-      }
-      button {
-        cursor: pointer;
-      }
-      .container {
-        width: min(var(--container), calc(100% - 44px));
-        margin-inline: auto;
-      }
-
-      /* NAVIGATION */
-      .navbar {
-        height: 76px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid var(--line);
-        background: rgba(11, 16, 24, 0.88);
-        backdrop-filter: blur(18px);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        font-size: 14px;
-        font-weight: 800;
-        letter-spacing: -0.3px;
-      }
-      .brand-symbol {
-        width: 39px;
-        height: 39px;
-        border-radius: 12px;
-        background: linear-gradient(145deg, var(--red), #a91e4c);
-        display: grid;
-        place-items: center;
-        font-weight: 900;
-        font-size: 19px;
-        box-shadow: 0 7px 23px rgba(237, 56, 109, 0.2);
-      }
-      .brand small {
-        display: block;
-        color: var(--muted);
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 1.5px;
-        line-height: 1.4;
-      }
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-        color: var(--muted);
-        font-size: 12px;
-      }
-      .nav-links a {
-        transition: 0.2s;
-      }
-      .nav-links a:hover {
-        color: var(--red-light);
-      }
-      .nav-cta {
-        background: var(--surface-2);
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        padding: 9px 17px;
-        font-size: 11px;
-        font-weight: 700;
-        transition: 0.2s;
-      }
-      .nav-cta:hover {
-        background: var(--red);
-        border-color: var(--red);
-      }
-
-      /* HERO */
-      .hero {
-        position: relative;
-        overflow: hidden;
-        padding: 100px 0 75px;
-        background:
-          radial-gradient(
-            ellipse at 80% 10%,
-            rgba(237, 56, 109, 0.15),
-            transparent 38%
-          ),
-          radial-gradient(
-            ellipse at 5% 90%,
-            rgba(229, 193, 138, 0.07),
-            transparent 35%
-          ),
-          linear-gradient(135deg, #111b29 0%, #0b1018 72%);
-      }
-      .hero:before {
-        content: "";
-        position: absolute;
-        width: 480px;
-        height: 480px;
-        border: 1px solid rgba(237, 56, 109, 0.12);
-        border-radius: 50%;
-        left: -240px;
-        top: -170px;
-        box-shadow:
-          0 0 0 50px rgba(237, 56, 109, 0.025),
-          0 0 0 100px rgba(237, 56, 109, 0.02);
-        pointer-events: none;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.35fr 0.65fr;
-        align-items: center;
-        gap: 45px;
-        position: relative;
-        z-index: 1;
-      }
-      .hero-content {
-        max-width: 700px;
-      }
-      .hero-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        border: 1px solid rgba(237, 56, 109, 0.3);
-        background: rgba(237, 56, 109, 0.08);
-        border-radius: 50px;
-        color: #ff91ae;
-        padding: 6px 14px;
-        font-size: 11px;
-        font-weight: 600;
-      }
-      .hero-label-dot {
-        width: 7px;
-        height: 7px;
-        background: var(--red);
-        border-radius: 50%;
-        box-shadow: 0 0 12px var(--red);
-      }
-      .hero h1 {
-        font-size: clamp(36px, 5vw, 62px);
-        line-height: 1.45;
-        font-weight: 900;
-        letter-spacing: -2px;
-        margin: 24px 0 17px;
-      }
-      .hero h1 span {
-        color: var(--red-light);
-      }
-      .hero-description {
-        font-size: 14px;
-        line-height: 2.2;
-        color: var(--muted);
-        max-width: 610px;
-      }
-      .hero-actions {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 30px;
-      }
-      .btn {
-        min-height: 46px;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        gap: 9px;
-        border-radius: 11px;
-        padding: 0 21px;
-        font-size: 12px;
-        font-weight: 700;
-        transition: 0.22s;
-        border: 1px solid transparent;
-      }
-      .btn-primary {
-        background: var(--red);
-        color: white;
-        box-shadow: 0 9px 24px rgba(237, 56, 109, 0.19);
-      }
-      .btn-primary:hover {
-        background: #d9275c;
-        transform: translateY(-3px);
-        box-shadow: 0 12px 28px rgba(237, 56, 109, 0.28);
-      }
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.04);
-        border-color: var(--line);
-        color: var(--text);
-      }
-      .btn-secondary:hover {
-        border-color: var(--gold);
-        color: var(--gold);
-      }
-      .hero-note {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        margin-top: 22px;
-        color: var(--subtle);
-        font-size: 10px;
-      }
-
-      /* HERO SIDE CARD */
-      .hero-panel {
-        background: linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.07),
-          rgba(255, 255, 255, 0.025)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 23px;
-        padding: 27px;
-        box-shadow: var(--shadow);
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-panel:after {
-        content: "";
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        background: rgba(237, 56, 109, 0.1);
-        filter: blur(65px);
-        bottom: -70px;
-        left: -40px;
-      }
-      .panel-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 17px;
-      }
-      .panel-top strong {
-        font-size: 13px;
-      }
-      .panel-status {
-        font-size: 9px;
-        color: var(--green);
-        background: rgba(157, 225, 189, 0.1);
-        padding: 5px 9px;
-        border-radius: 20px;
-      }
-      .panel-metrics {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-top: 18px;
-      }
-      .metric {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--line);
-        border-radius: 13px;
-        padding: 18px 13px;
-      }
-      .metric strong {
-        display: block;
-        font-size: 28px;
-        line-height: 1.4;
-        color: var(--gold);
-        font-weight: 900;
-      }
-      .metric span {
-        color: var(--muted);
-        font-size: 10px;
-      }
-      .panel-bottom {
-        margin-top: 17px;
-        padding: 13px;
-        border-radius: 11px;
-        background: rgba(237, 56, 109, 0.08);
-        color: #ffb1c5;
-        font-size: 11px;
-        text-align: center;
-      }
-
-      /* QUICK INFO */
-      .quick-info {
-        border-bottom: 1px solid var(--line);
-        background: var(--bg-soft);
-      }
-      .quick-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .quick-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 13px;
-        padding: 24px 12px;
-        border-left: 1px solid var(--line);
-      }
-      .quick-item:last-child {
-        border-left: 0;
-      }
-      .quick-icon {
-        width: 36px;
-        height: 36px;
-        display: grid;
-        place-items: center;
-        border-radius: 10px;
-        background: rgba(229, 193, 138, 0.09);
-        color: var(--gold);
-        font-size: 17px;
-      }
-      .quick-item strong {
-        display: block;
-        font-size: 12px;
-      }
-      .quick-item span {
-        display: block;
-        color: var(--muted);
-        font-size: 10px;
-      }
-
-      /* SECTION HEADINGS */
-      section.content-section {
-        padding: 82px 0;
-      }
-      .section-heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 20px;
-        margin-bottom: 30px;
-      }
-      .section-kicker {
-        color: var(--red-light);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 1.5px;
-        margin-bottom: 8px;
-        display: block;
-      }
-      .section-heading h2 {
-        font-size: clamp(23px, 3vw, 32px);
-        line-height: 1.55;
-        font-weight: 800;
-      }
-      .section-heading p {
-        color: var(--muted);
-        font-size: 12px;
-        margin-top: 5px;
-        max-width: 680px;
-      }
-      .section-side-note {
-        color: var(--gold);
-        font-size: 10px;
-        white-space: nowrap;
-        background: rgba(229, 193, 138, 0.07);
-        border: 1px solid rgba(229, 193, 138, 0.15);
-        border-radius: 9px;
-        padding: 8px 12px;
-      }
-
-      /* SEARCH AND FILTER */
-      .toolbar {
-        display: flex;
-        justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 22px;
-      }
-      .search-wrap {
-        flex: 1;
-        max-width: 380px;
-        position: relative;
-      }
-      .search-icon {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--subtle);
-        font-size: 17px;
-        pointer-events: none;
-      }
-      .search-input {
-        width: 100%;
-        height: 46px;
-        background: var(--surface);
-        color: var(--text);
-        border: 1px solid var(--line);
-        border-radius: 11px;
-        padding: 0 43px 0 15px;
-        font-size: 12px;
-        outline: none;
-        transition: 0.2s;
-      }
-      .search-input::placeholder {
-        color: var(--subtle);
-      }
-      .search-input:focus {
-        border-color: rgba(237, 56, 109, 0.65);
-        box-shadow: 0 0 0 3px rgba(237, 56, 109, 0.08);
-      }
-      .filters {
-        display: flex;
-        gap: 7px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-      .filter-btn {
-        min-height: 42px;
-        background: var(--surface);
-        color: var(--muted);
-        border: 1px solid var(--line);
-        padding: 0 14px;
-        border-radius: 10px;
-        font-size: 10px;
-        transition: 0.2s;
-      }
-      .filter-btn:hover,
-      .filter-btn.active {
-        color: #fff;
-        border-color: var(--red);
-        background: rgba(237, 56, 109, 0.13);
-      }
-      .results-line {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 15px;
-        color: var(--subtle);
-        font-size: 10px;
-      }
-      .results-line strong {
-        color: var(--gold);
-        font-weight: 700;
-      }
-
-      /* SERVICE CARDS */
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 15px;
-      }
-      .service-card {
-        background: linear-gradient(145deg, var(--surface), #111923);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 20px;
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 244px;
-        transition:
-          transform 0.23s,
-          border-color 0.23s,
-          box-shadow 0.23s;
-      }
-      .service-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(237, 56, 109, 0.48);
-        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
-      }
-      .card-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-      }
-      .card-number {
-        color: var(--gold);
-        background: rgba(229, 193, 138, 0.09);
-        border-radius: 7px;
-        padding: 3px 9px;
-        font-size: 10px;
-        font-weight: 700;
-      }
-      .card-category {
-        color: #ff9db7;
-        background: rgba(237, 56, 109, 0.09);
-        border-radius: 20px;
-        padding: 4px 9px;
-        font-size: 9px;
-        white-space: nowrap;
-      }
-      .service-card h3 {
-        font-size: 14px;
-        line-height: 1.9;
-        font-weight: 800;
-        margin: 16px 0 6px;
-      }
-      .service-card p {
-        color: var(--muted);
-        font-size: 11px;
-        line-height: 2;
-        flex: 1;
-      }
-      .card-meta {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        margin-top: 14px;
-        color: var(--subtle);
-        font-size: 10px;
-      }
-      .clock-icon {
-        color: var(--gold);
-        font-size: 13px;
-      }
-      .card-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        padding-top: 14px;
-        margin-top: 13px;
-        border-top: 1px solid var(--line);
-      }
-      .price-label {
-        color: var(--subtle);
-        font-size: 9px;
-        display: block;
-      }
-      .card-price {
-        color: var(--gold);
-        font-size: 15px;
-        font-weight: 800;
-        white-space: nowrap;
-      }
-      .card-price small {
-        font-size: 9px;
-        font-weight: 500;
-        color: var(--muted);
-      }
-      .card-order {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 7px 11px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        color: var(--muted);
-        font-size: 10px;
-        transition: 0.2s;
-        white-space: nowrap;
-      }
-      .card-order:hover {
-        background: var(--red);
-        color: white;
-        border-color: var(--red);
-      }
-      .empty-state {
-        display: none;
-        padding: 42px 20px;
-        border: 1px dashed var(--line);
-        border-radius: 14px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      /* GOLDEN IDEAS */
-      .golden-section {
-        position: relative;
-        overflow: hidden;
-        background:
-          radial-gradient(
-            ellipse at 50% 0%,
-            rgba(229, 193, 138, 0.12),
-            transparent 60%
-          ),
-          linear-gradient(180deg, #111923, #0b1018);
-        border-top: 1px solid rgba(229, 193, 138, 0.18);
-        border-bottom: 1px solid rgba(229, 193, 138, 0.18);
-      }
-      .golden-heading .section-kicker {
-        color: var(--gold);
-      }
-      .golden-heading h2 span {
-        color: var(--gold);
-      }
-      .golden-intro {
-        max-width: 760px;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 2.2;
-        margin-top: 8px;
-      }
-      .golden-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 17px;
-        align-items: stretch;
-      }
-      .golden-card {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        padding: 25px;
-        border-radius: 19px;
-        background: linear-gradient(145deg, #202a35, #131b25);
-        border: 1px solid rgba(229, 193, 138, 0.25);
-        transition: 0.25s;
-      }
-      .golden-card:before {
-        content: "";
-        position: absolute;
-        width: 180px;
-        height: 180px;
-        top: -100px;
-        left: -90px;
-        border-radius: 50%;
-        background: rgba(229, 193, 138, 0.09);
-        filter: blur(30px);
-        pointer-events: none;
-      }
-      .golden-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(229, 193, 138, 0.65);
-        box-shadow: 0 16px 42px rgba(0, 0, 0, 0.25);
-      }
-      .golden-card-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        position: relative;
-      }
-      .golden-number {
-        color: var(--gold);
-        font-size: 10px;
-        font-weight: 800;
-        background: rgba(229, 193, 138, 0.1);
-        border: 1px solid rgba(229, 193, 138, 0.18);
-        border-radius: 8px;
-        padding: 5px 10px;
-      }
-      .golden-badge {
-        color: #17130d;
-        background: linear-gradient(135deg, #f2d8a7, #c99c5d);
-        border-radius: 20px;
-        padding: 5px 11px;
-        font-size: 9px;
-        font-weight: 900;
-      }
-      .golden-icon {
-        width: 54px;
-        height: 54px;
-        display: grid;
-        place-items: center;
-        margin: 22px 0 13px;
-        border-radius: 16px;
-        background: rgba(229, 193, 138, 0.1);
-        border: 1px solid rgba(229, 193, 138, 0.2);
-        color: var(--gold);
-        font-size: 25px;
-      }
-      .golden-card h3 {
-        font-size: 17px;
-        font-weight: 900;
-        line-height: 1.8;
-        margin-bottom: 9px;
-        position: relative;
-      }
-      .golden-card p {
-        color: var(--muted);
-        font-size: 11px;
-        line-height: 2.15;
-        flex: 1;
-      }
-      .golden-features {
-        list-style: none;
-        margin: 15px 0 18px;
-        padding: 13px 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-      .golden-features li {
-        position: relative;
-        padding-right: 18px;
-        margin: 7px 0;
-        color: #cbd2dc;
-        font-size: 10px;
-        line-height: 1.9;
-      }
-      .golden-features li:before {
-        content: "✦";
-        position: absolute;
-        right: 0;
-        color: var(--gold);
-        font-size: 10px;
-      }
-      .golden-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        color: var(--muted);
-        font-size: 10px;
-        margin-bottom: 14px;
-      }
-      .golden-meta strong {
-        color: var(--green);
-        font-size: 10px;
-      }
-      .golden-price {
-        padding-top: 13px;
-        border-top: 1px solid var(--line);
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 10px;
-      }
-      .golden-price small {
-        display: block;
-        color: var(--subtle);
-        font-size: 9px;
-      }
-      .golden-price strong {
-        display: block;
-        color: var(--gold);
-        font-size: 20px;
-        font-weight: 900;
-        white-space: nowrap;
-      }
-      .golden-price strong span {
-        font-size: 9px;
-        color: var(--muted);
-        font-weight: 500;
-      }
-      .golden-order {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px 12px;
-        border-radius: 9px;
-        border: 1px solid rgba(229, 193, 138, 0.3);
-        color: var(--gold);
-        font-size: 10px;
-        font-weight: 700;
-        white-space: nowrap;
-        transition: 0.2s;
-      }
-      .golden-order:hover {
-        background: var(--gold);
-        color: #15120d;
-        border-color: var(--gold);
-      }
-      .golden-note {
-        margin-top: 18px;
-        padding: 15px 17px;
-        border-radius: 12px;
-        background: rgba(229, 193, 138, 0.055);
-        border: 1px solid rgba(229, 193, 138, 0.13);
-        color: #c6b99f;
-        font-size: 10px;
-        line-height: 2.1;
-      }
-      .golden-note strong {
-        color: var(--gold);
-      }
-
-      /* PACKAGES */
-      .packages-section {
-        background:
-          radial-gradient(
-            ellipse at 50% 0%,
-            rgba(237, 56, 109, 0.08),
-            transparent 60%
-          ),
-          #0e151f;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-      .packages-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 17px;
-        align-items: stretch;
-      }
-      .package-card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background: linear-gradient(145deg, #182231, #121a26);
-        border: 1px solid var(--line);
-        border-radius: 19px;
-        padding: 25px;
-        min-width: 0;
-        transition: 0.25s;
-      }
-      .package-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(229, 193, 138, 0.4);
-      }
-      .package-card.featured {
-        border-color: rgba(237, 56, 109, 0.7);
-        box-shadow: 0 15px 45px rgba(237, 56, 109, 0.09);
-      }
-      .package-featured-label {
-        position: absolute;
-        left: 18px;
-        top: 18px;
-        font-size: 9px;
-        color: #ffabc1;
-        background: rgba(237, 56, 109, 0.13);
-        padding: 5px 10px;
-        border-radius: 20px;
-      }
-      .package-tag {
-        display: inline-block;
-        color: var(--gold);
-        font-size: 10px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-      .package-card h3 {
-        font-size: 18px;
-        font-weight: 800;
-        margin-bottom: 8px;
-      }
-      .package-description {
-        color: var(--muted);
-        font-size: 11px;
-        min-height: 48px;
-        line-height: 2;
-      }
-      .package-price {
-        margin-top: 21px;
-        padding-bottom: 18px;
-        border-bottom: 1px solid var(--line);
-      }
-      .package-price strong {
-        display: block;
-        font-size: 27px;
-        color: var(--gold);
-        line-height: 1.5;
-      }
-      .package-price span {
-        color: var(--muted);
-        font-size: 10px;
-      }
-      .package-duration {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 15px;
-        padding: 10px 12px;
-        border-radius: 9px;
-        background: rgba(255, 255, 255, 0.035);
-        font-size: 10px;
-        color: var(--muted);
-      }
-      .package-duration strong {
-        color: var(--green);
-        font-size: 11px;
-      }
-      .package-list-title {
-        margin-top: 19px;
-        font-size: 11px;
-        font-weight: 800;
-      }
-      .package-list {
-        list-style: none;
-        margin: 12px 0 24px;
-        flex: 1;
-      }
-      .package-list li {
-        position: relative;
-        padding-right: 19px;
-        margin: 9px 0;
-        color: #c4ccd6;
-        font-size: 11px;
-        line-height: 1.8;
-      }
-      .package-list li:before {
-        content: "✓";
-        position: absolute;
-        right: 0;
-        color: var(--green);
-        font-weight: 900;
-      }
-      .package-btn {
-        width: 100%;
-        min-height: 45px;
-      }
-
-      /* CONDITIONS */
-      .conditions-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 13px;
-      }
-      .condition {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: var(--surface);
-        padding: 18px;
-      }
-      .condition-icon {
-        display: grid;
-        place-items: center;
-        width: 35px;
-        height: 35px;
-        border-radius: 10px;
-        margin-bottom: 12px;
-        background: rgba(229, 193, 138, 0.1);
-        color: var(--gold);
-        font-size: 16px;
-      }
-      .condition h3 {
-        font-size: 12px;
-        margin-bottom: 6px;
-      }
-      .condition p {
-        color: var(--muted);
-        font-size: 10px;
-        line-height: 2.1;
-      }
-
-      /* FINAL CTA */
-      .final-cta {
-        padding: 0 0 85px;
-      }
-      .cta-box {
-        position: relative;
-        overflow: hidden;
-        padding: 55px 25px;
-        border: 1px solid rgba(237, 56, 109, 0.25);
-        border-radius: 23px;
-        text-align: center;
-        background:
-          radial-gradient(
-            ellipse at 50% 0%,
-            rgba(237, 56, 109, 0.17),
-            transparent 65%
-          ),
-          linear-gradient(145deg, #1b1b29, #121722);
-      }
-      .cta-box h2 {
-        font-size: clamp(22px, 3vw, 31px);
-        font-weight: 900;
-        margin-bottom: 10px;
-      }
-      .cta-box p {
-        max-width: 600px;
-        margin: 0 auto;
-        color: var(--muted);
-        font-size: 12px;
-        line-height: 2.2;
-      }
-      .cta-actions {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 25px;
-      }
-      .cta-actions .btn {
-        min-width: 205px;
-        margin: 0;
-      }
-      .cta-phone {
-        background: rgba(255, 255, 255, 0.045);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        color: var(--text);
-      }
-      .cta-phone:hover {
-        border-color: var(--gold);
-        color: var(--gold);
-        transform: translateY(-3px);
-      }
-
-      /* FOOTER */
-      .footer {
-        padding: 28px 0;
-        border-top: 1px solid var(--line);
-        background: #090e15;
-      }
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .footer-brand-area {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .footer-brand {
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.3px;
-      }
-      .footer-brand span {
-        color: var(--red-light);
-      }
-      .footer-copy {
-        color: var(--subtle);
-        font-size: 10px;
-      }
-      .footer-social-area {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-      }
-      .social-title {
-        color: var(--muted);
-        font-size: 10px;
-      }
-      .footer-socials {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-      }
-      .social-link {
-        width: 41px;
-        height: 41px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.045);
-        border: 1px solid var(--line);
-        color: var(--muted);
-        transition: 0.22s ease;
-      }
-      .social-link svg {
-        width: 19px;
-        height: 19px;
-        display: block;
-      }
-      .social-link:hover {
-        color: #fff;
-        background: var(--red);
-        border-color: var(--red);
-        transform: translateY(-3px);
-      }
-      .social-instagram:hover {
-        background: #d94c87;
-        border-color: #d94c87;
-      }
-      .social-linkedin:hover {
-        background: #0a66c2;
-        border-color: #0a66c2;
-      }
-      .social-telegram:hover {
-        background: #229ed9;
-        border-color: #229ed9;
-      }
-
-      /* MOBILE STICKY CTA */
-      .mobile-cta {
-        display: none;
-        position: fixed;
-        bottom: 12px;
-        left: 12px;
-        right: 12px;
-        z-index: 90;
-        padding: 7px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.13);
-        background: rgba(17, 24, 35, 0.92);
-        backdrop-filter: blur(16px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-      .mobile-cta a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 43px;
-        background: var(--red);
-        color: #fff;
-        border-radius: 9px;
-        font-size: 12px;
-        font-weight: 800;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 1000px) {
-        .services-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .packages-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .package-card:last-child {
-          grid-column: span 2;
-        }
-        .golden-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .golden-card:last-child {
-          grid-column: span 2;
-        }
-        .hero-grid {
-          gap: 25px;
-        }
-      }
-      @media (max-width: 760px) {
-        .navbar {
-          height: 66px;
-        }
-        .nav-links {
-          display: none;
-        }
-        .hero {
-          padding: 65px 0 55px;
-        }
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-        .hero-panel {
-          max-width: 480px;
-        }
-        .hero h1 {
-          font-size: clamp(35px, 8vw, 48px);
-        }
-        .quick-item {
-          padding: 18px 8px;
-          gap: 8px;
-        }
-        .quick-icon {
-          width: 32px;
-          height: 32px;
-          font-size: 14px;
-        }
-        .quick-item strong {
-          font-size: 10px;
-        }
-        .quick-item span {
-          font-size: 8px;
-        }
-        section.content-section {
-          padding: 60px 0;
-        }
-        .section-heading {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .section-side-note {
-          white-space: normal;
-        }
-        .toolbar {
-          flex-direction: column;
-        }
-        .search-wrap {
-          max-width: none;
-        }
-        .filters {
-          justify-content: flex-start;
-          overflow-x: auto;
-          flex-wrap: nowrap;
-          padding-bottom: 5px;
-          scrollbar-width: thin;
-        }
-        .filter-btn {
-          flex: 0 0 auto;
-        }
-        .conditions-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .footer-inner {
-          flex-direction: column;
-          text-align: center;
-          gap: 17px;
-        }
-        .footer-social-area {
-          flex-direction: column;
-          gap: 10px;
-        }
-        .mobile-cta {
-          display: block;
-        }
-        .final-cta {
-          padding-bottom: 100px;
-        }
-        .cta-actions {
-          flex-direction: column;
-        }
-        .cta-actions .btn {
-          width: 100%;
-          max-width: 300px;
-        }
-      }
-      @media (max-width: 520px) {
-        .container {
-          width: calc(100% - 30px);
-        }
-        .brand {
-          font-size: 12px;
-        }
-        .brand-symbol {
-          width: 35px;
-          height: 35px;
-          border-radius: 10px;
-        }
-        .nav-cta {
-          font-size: 10px;
-          padding: 8px 11px;
-        }
-        .hero {
-          padding: 52px 0 43px;
-        }
-        .hero h1 {
-          letter-spacing: -1px;
-          margin-top: 18px;
-        }
-        .hero-description {
-          font-size: 12px;
-        }
-        .hero-actions {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 9px;
-        }
-        .hero-actions .btn {
-          padding: 0 10px;
-          font-size: 10px;
-        }
-        .hero-panel {
-          padding: 18px;
-          border-radius: 17px;
-        }
-        .metric {
-          padding: 13px 10px;
-        }
-        .metric strong {
-          font-size: 24px;
-        }
-        .quick-grid {
-          grid-template-columns: 1fr;
-        }
-        .quick-item {
-          justify-content: flex-start;
-          padding: 13px 3px;
-          border-left: 0;
-          border-bottom: 1px solid var(--line);
-        }
-        .quick-item:last-child {
-          border-bottom: 0;
-        }
-        .quick-item strong {
-          font-size: 11px;
-        }
-        .quick-item span {
-          font-size: 9px;
-        }
-        section.content-section {
-          padding: 48px 0;
-        }
-        .section-heading h2 {
-          font-size: 23px;
-        }
-        .services-grid {
-          grid-template-columns: 1fr;
-          gap: 11px;
-        }
-        .service-card {
-          min-height: unset;
-          padding: 17px;
-        }
-        .service-card h3 {
-          font-size: 14px;
-        }
-        .service-card p {
-          font-size: 11px;
-        }
-        .golden-grid {
-          grid-template-columns: 1fr;
-        }
-        .golden-card:last-child {
-          grid-column: auto;
-        }
-        .golden-card {
-          padding: 21px;
-        }
-        .packages-grid {
-          grid-template-columns: 1fr;
-        }
-        .package-card:last-child {
-          grid-column: auto;
-        }
-        .package-card {
-          padding: 22px;
-        }
-        .conditions-grid {
-          grid-template-columns: 1fr;
-        }
-        .cta-box {
-          padding: 38px 18px;
-          border-radius: 17px;
-        }
-        .cta-box h2 {
-          font-size: 23px;
-        }
-        .social-link {
-          width: 43px;
-          height: 43px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-      <div class="container nav-inner">
-        <a href="#" class="brand">
-          <span class="brand-symbol">A</span>
-          <span>ARSAM SAMADIAN<small>WEB SERVICES</small></span>
-        </a>
-
-        <div class="nav-links">
-          <a href="#services">خدمات</a>
-          <a href="#golden">ایده‌های طلایی</a>
-          <a href="#packages">پکیج‌ها</a>
-          <a href="#conditions">شرایط اجرا</a>
-        </div>
-
-        <a
-          href="https://t.me/Zenix_Web"
-          class="nav-cta"
-          target="_blank"
-          rel="noopener"
-        >
-          مشاوره و سفارش ↗
-        </a>
-      </div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-label">
-            <span class="hero-label-dot"></span>
-            پیشنهادهای ویژه بلک فرایدی
-          </div>
-
-          <h1>
-            فروشگاهت رو<br />
-            برای <span>بلک فرایدی</span><br />
-            آماده کن!
-          </h1>
-
-          <p class="hero-description">
-            مجموعه‌ای از ارتقاهای کاربردی و سریع برای فروشگاه اینترنتی؛ از
-            جذاب‌تر کردن ظاهر کمپین تا اضافه کردن امکانات کوچک اما مؤثر در مسیر
-            خرید مشتریان. در کنار خدمات معمول، سه ایده طلایی و اختصاصی هم برای
-            ایجاد تجربه‌ای متفاوت در فروشگاه آماده شده است.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#services" class="btn btn-primary"
-              >مشاهده خدمات <span>←</span></a
-            >
-            <a href="#golden" class="btn btn-secondary"
-              >مشاهده ایده‌های طلایی</a
-            >
-          </div>
-
-          <div class="hero-note">
-            <span>✦</span>
-            خدمات محدود و کاربردی، بدون توسعه‌های سنگین و زمان‌بر
-          </div>
-        </div>
-
-        <div class="hero-panel">
-          <div class="panel-top">
-            <strong>Black Friday Upgrade</strong>
-            <span class="panel-status">● آماده سفارش</span>
-          </div>
-
-          <div class="panel-metrics">
-            <div class="metric">
-              <strong>۲۵</strong><span>خدمت قابل انتخاب</span>
-            </div>
-            <div class="metric">
-              <strong>۳</strong><span>ایده طلایی اختصاصی</span>
-            </div>
-            <div class="metric">
-              <strong>۳</strong><span>پکیج پیشنهادی</span>
-            </div>
-            <div class="metric">
-              <strong>۶h</strong><span>حداکثر زمان پکیج‌ها</span>
-            </div>
-          </div>
-
-          <div class="panel-bottom">
-            ارتقای هوشمند فروشگاه، با زمان اجرای مشخص
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- QUICK INFO -->
-    <div class="quick-info">
-      <div class="container quick-grid">
-        <div class="quick-item">
-          <div class="quick-icon">◷</div>
-          <div>
-            <strong>اجرای سریع</strong
-            ><span>حداکثر ۲ ساعت برای هر خدمت پایه</span>
-          </div>
-        </div>
-        <div class="quick-item">
-          <div class="quick-icon">◇</div>
-          <div>
-            <strong>قیمت‌گذاری شفاف</strong
-            ><span>هزینه مشخص برای خدمات پایه</span>
-          </div>
-        </div>
-        <div class="quick-item">
-          <div class="quick-icon">✦</div>
-          <div>
-            <strong>ایده‌های اختصاصی</strong
-            ><span>سه قابلیت ویژه برای تجربه متفاوت</span>
-          </div>
-        </div>
-      </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090c">
+<meta name="description" content="پیشنهادهای ویژه ارتقای فروشگاه اینترنتی برای بلک فرایدی؛ ۲۵ خدمت، ۳ ایده طلایی و ۳ پکیج پیشنهادی - Arsam Samadian">
+<title>Black Friday Upgrade | Arsam Samadian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090c;--bg2:#0d0f14;--panel:#12151c;--panel2:#191d26;
+  --text:#f4f1eb;--muted:#a3a3aa;--soft:#747780;
+  --line:rgba(255,255,255,.09);--red:#e4334c;--red2:#ff596a;
+  --gold:#e6bd79;--gold2:#f5d9a5;--green:#9ad7ae;
+  --container:1220px;--radius:22px;--shadow:0 25px 80px rgba(0,0,0,.38);
+  --ease:cubic-bezier(.22,.75,.25,1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:'Vazirmatn',Tahoma,sans-serif;line-height:1.85;font-size:14px;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:pointer}.container{width:min(var(--container),calc(100% - 48px));margin-inline:auto}
+::selection{background:var(--gold);color:#15110b}
+/* Scroll progress */
+.scroll-progress{position:fixed;top:0;right:0;width:100%;height:3px;background:rgba(255,255,255,.06);z-index:300}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--red),var(--gold));box-shadow:0 0 16px rgba(230,189,121,.45)}
+/* Navigation */
+.navbar{height:78px;position:fixed;inset:0 0 auto;z-index:200;display:flex;align-items:center;border-bottom:1px solid transparent;transition:background .3s,border-color .3s, height .3s}
+.navbar.scrolled{height:68px;background:rgba(8,9,12,.86);border-color:var(--line);backdrop-filter:blur(18px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:900;letter-spacing:.4px;white-space:nowrap}
+.brand-symbol{height:40px;width:40px;display:grid;place-items:center;border-radius:13px;color:#130e08;background:linear-gradient(145deg,#f3d8a5,#c58c45);font-size:20px;font-weight:900;box-shadow:0 8px 26px rgba(230,189,121,.17)}
+.brand small{display:block;color:var(--soft);font-size:8px;font-weight:600;letter-spacing:2px;line-height:1.4}
+.nav-links{display:flex;align-items:center;gap:26px;color:#b7b7bd;font-size:11px}
+.nav-links a{position:relative;padding:8px 0;transition:color .2s}.nav-links a:after{content:"";position:absolute;right:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .25s}.nav-links a:hover,.nav-links a.active{color:var(--gold2)}.nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;gap:9px;padding:10px 17px;border:1px solid rgba(230,189,121,.32);border-radius:50px;color:var(--gold2);font-size:10px;font-weight:800;transition:.25s;white-space:nowrap}.nav-cta:hover{background:var(--gold);color:#171109;transform:translateY(-2px)}
+/* Hero */
+.hero{min-height:900px;min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px;background:radial-gradient(ellipse at 76% 40%,rgba(190,35,56,.18),transparent 34%),radial-gradient(ellipse at 12% 15%,rgba(230,189,121,.10),transparent 31%),linear-gradient(135deg,#101116 0%,#08090c 60%,#0e0b0c 100%)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.3;pointer-events:none;background:linear-gradient(115deg,transparent 0 54%,rgba(255,255,255,.035) 54.1%,transparent 54.3%),radial-gradient(circle at 80% 50%,transparent 0 23%,rgba(255,255,255,.025) 23.1% 23.2%,transparent 23.3%)}
+.hero:after{content:"BLACK FRIDAY";position:absolute;left:-4vw;bottom:-.2em;font-size:clamp(90px,18vw,260px);font-weight:900;line-height:.8;letter-spacing:-.07em;white-space:nowrap;color:rgba(255,255,255,.025);pointer-events:none;direction:ltr}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px;position:relative;z-index:2}
+.hero-content{max-width:650px;position:relative;z-index:4}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 13px;border:1px solid rgba(230,189,121,.27);border-radius:50px;background:rgba(230,189,121,.055);color:var(--gold2);font-size:10px;font-weight:700;letter-spacing:.3px}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 13px var(--red2);animation:pulse 2s infinite}
+.hero h1{font-size:clamp(42px,6.2vw,78px);font-weight:900;letter-spacing:-2.6px;line-height:1.32;margin:26px 0 19px}
+.hero h1 .gold{color:var(--gold);display:inline-block;text-shadow:0 8px 35px rgba(230,189,121,.12)}
+.hero-description{max-width:580px;color:#b2b2b8;font-size:13px;line-height:2.35}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:31px}
+.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 22px;border-radius:50px;border:1px solid transparent;font-size:11px;font-weight:800;transition:transform .25s,background .25s,border-color .25s,box-shadow .25s}
+.btn-primary{background:linear-gradient(110deg,#e6bd79,#f4dba9);color:#171109;box-shadow:0 11px 32px rgba(230,189,121,.17)}.btn-primary:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(230,189,121,.26)}
+.btn-outline{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.035);color:var(--text)}.btn-outline:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-3px)}
+.hero-caption{display:flex;align-items:center;gap:12px;margin-top:28px;color:#888a92;font-size:10px}.hero-caption:before{content:"";width:34px;height:1px;background:var(--gold)}
+/* CSS-only hero artwork */
+.hero-stage{height:min(690px,72vw);min-height:480px;position:relative;display:grid;place-items:center;isolation:isolate;transform:translateY(var(--hero-shift,0px));will-change:transform}
+.stage-halo{position:absolute;width:82%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(230,189,121,.15);box-shadow:0 0 0 34px rgba(230,189,121,.025),0 0 0 85px rgba(230,189,121,.018),inset 0 0 90px rgba(230,189,121,.04);animation:haloRotate 35s linear infinite}
+.stage-halo:before,.stage-halo:after{content:"";position:absolute;border-radius:50%;border:1px dashed rgba(230,189,121,.25);inset:9%;transform:rotate(28deg)}.stage-halo:after{inset:-13%;border-style:solid;border-color:rgba(228,51,76,.11);transform:rotate(-32deg)}
+.stage-disc{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 25%,#343038 0,#17151b 34%,#090a0e 68%);border:1px solid rgba(255,255,255,.12);box-shadow:inset -25px -28px 70px rgba(0,0,0,.8),0 35px 100px rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;transform:rotate(-12deg)}
+.stage-disc:before{content:"";position:absolute;inset:8%;border:1px solid rgba(230,189,121,.2);border-radius:50%}.stage-disc:after{content:"";position:absolute;width:12%;height:12%;top:18%;right:18%;border-radius:50%;background:var(--gold);filter:blur(28px);opacity:.8}
+.disc-type{position:relative;z-index:1;text-align:center;transform:rotate(12deg);direction:ltr}.disc-type small{display:block;color:var(--gold);font-size:clamp(10px,1vw,14px);font-weight:800;letter-spacing:.35em}.disc-type strong{display:block;color:#f1e4cf;font-size:clamp(42px,7vw,88px);font-weight:900;line-height:1.05;letter-spacing:-.07em;text-shadow:0 10px 45px rgba(230,189,121,.14)}.disc-type span{display:inline-block;margin-top:8px;padding:4px 13px;border:1px solid rgba(230,189,121,.32);border-radius:50px;color:var(--gold2);font-size:9px;letter-spacing:.28em}
+.hero-gift{position:absolute;width:180px;height:155px;bottom:13%;left:13%;transform:rotate(-12deg);filter:drop-shadow(0 22px 22px rgba(0,0,0,.5));animation:float 6s ease-in-out infinite}
+.gift-box{position:absolute;inset:25px 0 0;background:linear-gradient(135deg,#9d1d31,#4b0f1b);border:1px solid rgba(255,255,255,.16);clip-path:polygon(0 10%,100% 0,100% 85%,0 100%)}.gift-box:before{content:"";position:absolute;left:42%;top:0;width:17%;height:100%;background:linear-gradient(90deg,#b58a4c,#f5d79d,#a47639)}.gift-box:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent 45%)}
+.gift-lid{position:absolute;top:10px;left:-7px;width:194px;height:40px;background:linear-gradient(110deg,#e7c181,#9b6a32);transform:skewY(-8deg);border:1px solid rgba(255,255,255,.25)}.gift-ribbon{position:absolute;top:-3px;left:70px;width:42px;height:45px;border:9px solid #f2d69c;border-radius:50% 50% 5px 50%;transform:rotate(35deg)}
+.float-chip{position:absolute;z-index:4;padding:10px 15px;border:1px solid rgba(230,189,121,.25);border-radius:13px;background:rgba(17,17,21,.78);backdrop-filter:blur(12px);box-shadow:0 15px 45px rgba(0,0,0,.28);color:var(--gold2);font-size:10px;font-weight:800;animation:float 5s ease-in-out infinite}
+.chip-top{top:14%;right:8%}.chip-bottom{right:2%;bottom:18%;animation-delay:-2s}.chip-left{left:5%;top:26%;color:#ff8b98;border-color:rgba(228,51,76,.3);animation-delay:-1s}
+.stage-spark{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--gold2);box-shadow:0 0 18px var(--gold);}.spark-one{top:13%;left:27%}.spark-two{bottom:22%;right:17%;width:3px;height:3px}.spark-three{top:40%;right:4%;width:4px;height:4px}
+.scroll-cue{position:absolute;bottom:26px;right:50%;transform:translateX(50%);display:flex;align-items:center;gap:10px;color:#777982;font-size:9px;letter-spacing:1px}.scroll-cue i{width:18px;height:29px;border:1px solid rgba(255,255,255,.3);border-radius:20px;position:relative}.scroll-cue i:after{content:"";position:absolute;top:5px;right:7px;width:2px;height:6px;border-radius:3px;background:var(--gold);animation:scrollDot 1.5s infinite}
+/* Marquee / quick stats */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:#0c0e12;white-space:nowrap}.marquee-track{display:flex;width:max-content;gap:34px;padding:15px 0;animation:marquee 32s linear infinite}.marquee-item{color:#aaa9a4;font-size:10px;font-weight:700;letter-spacing:1px}.marquee-item b{color:var(--gold);font-size:13px;margin-inline:9px}
+.quick-info{background:linear-gradient(90deg,#111218,#17151a,#111218);border-bottom:1px solid var(--line)}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr)}.quick-item{display:flex;align-items:center;justify-content:center;gap:13px;padding:24px 15px;border-left:1px solid var(--line)}.quick-item:last-child{border-left:0}.quick-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(230,189,121,.2);border-radius:13px;color:var(--gold);font-size:19px;background:rgba(230,189,121,.06)}.quick-item strong{display:block;font-size:12px}.quick-item span{display:block;color:var(--muted);font-size:10px}
+/* Section basics */
+section.content-section{padding:112px 0;position:relative}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px}.section-kicker{display:block;margin-bottom:10px;color:var(--gold);font-size:9px;font-weight:900;letter-spacing:2.4px;direction:ltr;text-align:right}.section-heading h2{font-size:clamp(27px,4vw,43px);line-height:1.5;font-weight:900;letter-spacing:-1px}.section-heading h2 span{color:var(--gold)}.section-heading p{max-width:660px;color:var(--muted);font-size:12px;line-height:2.2;margin-top:8px}.section-side-note{white-space:nowrap;padding:9px 14px;border:1px solid rgba(230,189,121,.17);border-radius:50px;background:rgba(230,189,121,.045);color:var(--gold2);font-size:10px}
+/* Reveal effects */
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:var(--delay,0ms)}[data-reveal].is-visible{opacity:1;transform:translateY(0)}
+/* Story intro */
+.story-section{padding:105px 0 115px;background:radial-gradient(ellipse at 18% 55%,rgba(228,51,76,.08),transparent 33%),#0b0d11;border-bottom:1px solid var(--line);overflow:hidden}.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}.story-title{position:sticky;top:130px}.story-title h2{font-size:clamp(35px,5vw,60px);font-weight:900;line-height:1.42;letter-spacing:-1.5px}.story-title h2 span{color:var(--gold)}.story-title p{margin-top:20px;color:var(--muted);max-width:440px;font-size:12px;line-height:2.3}.story-list{display:grid;gap:13px}.story-item{display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:start;padding:23px 24px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(120deg,rgba(255,255,255,.045),rgba(255,255,255,.012));transition:transform .3s,border-color .3s}.story-item:hover{transform:translateX(-6px);border-color:rgba(230,189,121,.3)}.story-no{font-size:23px;font-weight:900;color:var(--gold);direction:ltr}.story-item h3{font-size:13px;font-weight:800;margin-bottom:5px}.story-item p{color:var(--muted);font-size:10px;line-height:2.1}
+/* Service area */
+.services-section{background:linear-gradient(180deg,#0a0b0f,#0d0f14)}.service-layout{display:grid;grid-template-columns:275px minmax(0,1fr);gap:30px;align-items:start}.service-sidebar{position:sticky;top:100px;padding:22px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(145deg,#171921,#101218);box-shadow:var(--shadow)}.sidebar-label{font-size:9px;color:var(--gold);font-weight:900;letter-spacing:1.8px;display:block;margin-bottom:8px}.service-sidebar h3{font-size:18px;font-weight:900;line-height:1.5}.service-sidebar>p{font-size:10px;color:var(--muted);line-height:2;margin:9px 0 19px}.search-wrap{position:relative;margin-bottom:17px}.search-icon{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:19px;pointer-events:none}.search-input{height:45px;width:100%;background:#0b0d12;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:0 39px 0 12px;font-size:10px;outline:none;transition:.2s}.search-input::placeholder{color:#777b85}.search-input:focus{border-color:rgba(230,189,121,.55);box-shadow:0 0 0 3px rgba(230,189,121,.07)}.filters{display:grid;gap:7px}.filter-btn{min-height:40px;text-align:right;padding:0 12px;border:1px solid transparent;border-radius:9px;background:transparent;color:#aaaab1;font-size:10px;transition:.2s}.filter-btn:hover,.filter-btn.active{background:rgba(230,189,121,.08);border-color:rgba(230,189,121,.18);color:var(--gold2)}.filter-btn:before{content:"";display:inline-block;width:5px;height:5px;margin-left:10px;vertical-align:middle;border-radius:50%;background:#62656e;transition:.2s}.filter-btn.active:before{background:var(--gold);box-shadow:0 0 10px var(--gold)}.sidebar-foot{border-top:1px solid var(--line);margin-top:18px;padding-top:14px;color:#858892;font-size:9px;line-height:1.9}.sidebar-foot strong{color:var(--gold2)}
+.service-results-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;color:var(--muted);font-size:10px}.service-results-head strong{color:var(--gold);font-size:12px}.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.service-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:250px;padding:20px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#171a22,#101218);transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}.service-card:before{content:"";position:absolute;top:-85px;left:-75px;width:155px;height:155px;border-radius:50%;background:rgba(230,189,121,.045);filter:blur(14px);transition:background .3s}.service-card:hover{transform:translateY(-5px);border-color:rgba(230,189,121,.32);box-shadow:0 20px 40px rgba(0,0,0,.22)}.service-card:hover:before{background:rgba(230,189,121,.11)}.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative}.card-number{font-size:10px;color:var(--gold);font-weight:900;direction:ltr;letter-spacing:1px}.card-category{padding:4px 9px;border:1px solid rgba(228,51,76,.18);border-radius:50px;color:#ff9aa6;background:rgba(228,51,76,.07);font-size:8px;white-space:nowrap}.service-card h3{font-size:13px;line-height:1.9;font-weight:800;margin:15px 0 6px;position:relative}.service-card p{font-size:10px;color:var(--muted);line-height:2.1;flex:1}.card-meta{display:flex;align-items:center;gap:7px;margin-top:13px;color:#8f929b;font-size:9px}.clock-icon{color:var(--gold);font-size:13px}.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}.price-label{display:block;color:#777b84;font-size:8px}.card-price{font-size:14px;color:var(--gold2);font-weight:900;white-space:nowrap}.card-price small{font-size:8px;color:var(--muted);font-weight:500}.card-order{padding:7px 10px;border:1px solid rgba(230,189,121,.25);border-radius:8px;color:var(--gold2);font-size:9px;font-weight:800;white-space:nowrap;transition:.2s}.card-order:hover{background:var(--gold);border-color:var(--gold);color:#15110b}.empty-state{display:none;padding:42px 20px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted);font-size:12px}.services-disclaimer{margin-top:18px;padding:14px 16px;border-right:2px solid var(--gold);background:rgba(230,189,121,.045);color:#a7a8ae;font-size:9px;line-height:2}
+/* Golden ideas */
+.golden-section{overflow:hidden;background:radial-gradient(ellipse at 50% 0,rgba(230,189,121,.11),transparent 44%),linear-gradient(180deg,#111116,#0b0c10 85%);border-block:1px solid rgba(230,189,121,.15)}.golden-heading .section-kicker{color:var(--gold)}.golden-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;align-items:stretch}.golden-card{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid rgba(230,189,121,.21);border-radius:21px;background:linear-gradient(160deg,#1b1c22,#101116 78%);transition:transform .35s var(--ease),border-color .3s,box-shadow .3s}.golden-card:hover{transform:translateY(-8px);border-color:rgba(230,189,121,.55);box-shadow:0 26px 55px rgba(0,0,0,.34)}.golden-art{height:225px;position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,rgba(230,189,121,.14),transparent 55%),linear-gradient(145deg,#222027,#0d0e13)}.golden-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,#17171d 100%)}.art-orbit{position:absolute;width:190px;height:190px;border:1px solid rgba(230,189,121,.22);border-radius:50%;box-shadow:0 0 0 18px rgba(230,189,121,.025),0 0 0 38px rgba(230,189,121,.018)}.golden-symbol{position:relative;z-index:2;width:112px;height:112px;display:grid;place-items:center;border:1px solid rgba(245,217,165,.5);border-radius:28px;background:linear-gradient(145deg,rgba(230,189,121,.28),rgba(230,189,121,.04));box-shadow:0 25px 55px rgba(0,0,0,.45),inset 0 0 28px rgba(230,189,121,.15);color:var(--gold2);font-size:48px;transform:rotate(-8deg)}.art-hunt .golden-symbol{border-radius:24px;transform:rotate(-8deg);font-size:46px}.art-hunt .golden-symbol:after{content:"";position:absolute;inset:-12px;border:1px dashed rgba(230,189,121,.35);border-radius:32px}.art-card .golden-symbol{width:145px;height:92px;border-radius:16px;transform:rotate(8deg);font-size:39px}.art-code .golden-symbol{width:84px;height:145px;border-radius:20px;transform:rotate(-7deg);font-size:37px}.art-code .golden-symbol:after{content:"••••";position:absolute;bottom:13px;font-size:10px;letter-spacing:5px;color:var(--gold)}.art-glow{position:absolute;width:80px;height:80px;border-radius:50%;background:var(--gold);filter:blur(65px);opacity:.35}.golden-card-body{padding:23px 22px 22px;display:flex;flex-direction:column;flex:1}.golden-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.golden-number{font-size:8px;color:var(--gold);font-weight:900;letter-spacing:1.5px;direction:ltr}.golden-badge{padding:4px 10px;border-radius:30px;background:linear-gradient(120deg,#f3d7a0,#be8742);color:#21170b;font-size:8px;font-weight:900}.golden-card h3{font-size:17px;font-weight:900;line-height:1.8;margin:15px 0 8px}.golden-card p{color:var(--muted);font-size:10px;line-height:2.15;flex:1}.golden-features{list-style:none;margin:15px 0 16px;padding:12px 0;border-block:1px solid var(--line)}.golden-features li{position:relative;padding-right:17px;margin:6px 0;color:#c4c2bd;font-size:9px;line-height:1.9}.golden-features li:before{content:"✦";position:absolute;right:0;color:var(--gold);font-size:9px}.golden-meta{display:flex;justify-content:space-between;gap:10px;margin-bottom:13px;color:var(--muted);font-size:9px}.golden-meta strong{color:var(--green);font-size:9px}.golden-price{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding-top:13px;border-top:1px solid var(--line)}.golden-price small{display:block;color:#7e818a;font-size:8px}.golden-price strong{display:block;color:var(--gold2);font-size:18px;font-weight:900;white-space:nowrap}.golden-price strong span{font-size:8px;color:var(--muted);font-weight:500}.golden-order{padding:8px 11px;border:1px solid rgba(230,189,121,.3);border-radius:9px;color:var(--gold2);font-size:9px;font-weight:800;white-space:nowrap;transition:.2s}.golden-order:hover{background:var(--gold);color:#15110b;border-color:var(--gold)}.golden-note{margin-top:18px;padding:15px 17px;border:1px solid rgba(230,189,121,.13);border-radius:12px;background:rgba(230,189,121,.045);color:#bdb5a7;font-size:9px;line-height:2.15}.golden-note strong{color:var(--gold2)}
+/* Packages */
+.packages-section{background:radial-gradient(ellipse at 50% 0,rgba(228,51,76,.09),transparent 50%),#0c0e13;border-bottom:1px solid var(--line)}.packages-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;align-items:stretch}.package-card{position:relative;display:flex;flex-direction:column;min-width:0;padding:27px 24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#1a1d25,#111319);transition:transform .3s,border-color .3s,box-shadow .3s}.package-card:hover{transform:translateY(-6px);border-color:rgba(230,189,121,.35);box-shadow:0 20px 45px rgba(0,0,0,.25)}.package-card.featured{border-color:rgba(228,51,76,.58);background:linear-gradient(145deg,#241a21,#141319);box-shadow:0 20px 50px rgba(228,51,76,.08)}.package-featured-label{position:absolute;left:18px;top:18px;padding:5px 10px;border-radius:30px;background:rgba(228,51,76,.13);color:#ff9aa6;font-size:8px}.package-tag{display:inline-block;color:var(--gold);font-size:8px;font-weight:900;letter-spacing:1.5px;direction:ltr;text-align:right;margin-bottom:13px}.package-card h3{font-size:17px;font-weight:900;margin-bottom:8px}.package-description{min-height:50px;color:var(--muted);font-size:10px;line-height:2.1}.package-price{margin-top:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}.package-price strong{display:block;color:var(--gold2);font-size:29px;font-weight:900;line-height:1.5}.package-price span{font-size:9px;color:var(--muted)}.package-duration{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:10px 12px;border-radius:9px;background:rgba(255,255,255,.035);font-size:9px;color:var(--muted)}.package-duration strong{color:var(--green);font-size:10px}.package-list-title{margin-top:19px;font-size:10px;font-weight:900}.package-list{list-style:none;margin:12px 0 22px;flex:1}.package-list li{position:relative;padding-right:18px;margin:8px 0;color:#c6c5c3;font-size:10px;line-height:1.9}.package-list li:before{content:"✓";position:absolute;right:0;color:var(--green);font-weight:900}.package-btn{width:100%;min-height:46px;border-radius:10px}.package-card:not(.featured) .package-btn{border-color:rgba(255,255,255,.15)}
+/* Conditions */
+.conditions-section{background:#090b0f}.conditions-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.condition{padding:20px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#151820,#101218);transition:transform .25s,border-color .25s}.condition:hover{transform:translateY(-4px);border-color:rgba(230,189,121,.27)}.condition-icon{width:37px;height:37px;display:grid;place-items:center;margin-bottom:13px;border:1px solid rgba(230,189,121,.2);border-radius:11px;background:rgba(230,189,121,.07);color:var(--gold);font-size:16px}.condition h3{font-size:11px;font-weight:800;margin-bottom:6px}.condition p{color:var(--muted);font-size:9px;line-height:2.1}
+/* CTA / footer */
+.final-cta{padding:30px 0 110px;background:#090b0f}.cta-box{position:relative;overflow:hidden;padding:74px 25px;text-align:center;border:1px solid rgba(230,189,121,.25);border-radius:28px;background:radial-gradient(ellipse at 50% 0,rgba(230,189,121,.15),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(228,51,76,.13),transparent 45%),linear-gradient(135deg,#1a1b21,#101116)}.cta-box:before{content:"";position:absolute;width:370px;height:370px;top:-210px;right:-120px;border:1px solid rgba(230,189,121,.12);border-radius:50%;box-shadow:0 0 0 35px rgba(230,189,121,.025),0 0 0 70px rgba(230,189,121,.02)}.cta-box:after{content:"";position:absolute;width:260px;height:260px;bottom:-170px;left:-80px;border:1px solid rgba(228,51,76,.16);border-radius:50%;box-shadow:0 0 0 28px rgba(228,51,76,.025)}.cta-box>*{position:relative;z-index:1}.cta-box h2{font-size:clamp(25px,4vw,42px);font-weight:900;margin:8px 0 11px}.cta-box p{max-width:620px;margin:0 auto;color:var(--muted);font-size:11px;line-height:2.2}.cta-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px}.cta-actions .btn{min-width:210px}.cta-phone{border-color:rgba(255,255,255,.17);background:rgba(255,255,255,.035);color:var(--text)}.cta-phone:hover{border-color:var(--gold);color:var(--gold2);transform:translateY(-3px)}
+.footer{padding:29px 0 32px;border-top:1px solid var(--line);background:#07080b}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand-area{display:flex;flex-direction:column;gap:4px}.footer-brand{font-size:12px;font-weight:900;letter-spacing:.5px}.footer-brand span{color:var(--gold)}.footer-copy{color:#777a82;font-size:9px}.footer-social-area{display:flex;align-items:center;gap:13px}.social-title{color:var(--muted);font-size:9px}.footer-socials{display:flex;align-items:center;gap:8px}.social-link{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--muted);transition:.22s}.social-link svg{width:18px;height:18px;display:block}.social-link:hover{color:#fff;background:var(--red);border-color:var(--red);transform:translateY(-3px)}.social-instagram:hover{background:#d94c87;border-color:#d94c87}.social-linkedin:hover{background:#0a66c2;border-color:#0a66c2}.social-telegram:hover{background:#229ed9;border-color:#229ed9}
+.mobile-cta{display:none;position:fixed;bottom:12px;left:12px;right:12px;z-index:180;padding:7px;border:1px solid rgba(255,255,255,.14);border-radius:15px;background:rgba(16,17,23,.9);backdrop-filter:blur(16px);box-shadow:0 12px 35px rgba(0,0,0,.35)}.mobile-cta a{display:flex;align-items:center;justify-content:center;height:44px;border-radius:10px;background:linear-gradient(110deg,#e6bd79,#f4dba9);color:#171109;font-size:11px;font-weight:900}
+/* Animations */
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,89,106,.45)}50%{box-shadow:0 0 0 8px rgba(255,89,106,0)}}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -13px}}@keyframes haloRotate{to{transform:rotate(360deg)}}@keyframes scrollDot{0%{opacity:0;transform:translateY(0)}35%{opacity:1}100%{opacity:0;transform:translateY(11px)}}@keyframes marquee{to{transform:translateX(50%)}}
+/* Responsive */
+@media(max-width:1050px){.hero-grid{gap:25px}.hero-stage{min-height:430px}.service-layout{grid-template-columns:240px minmax(0,1fr);gap:18px}.services-grid{grid-template-columns:1fr}.golden-grid,.packages-grid{gap:12px}.golden-card-body{padding:19px}.golden-art{height:190px}}
+@media(max-width:780px){.container{width:calc(100% - 34px)}.navbar{height:68px}.nav-links{display:none}.nav-cta{padding:9px 13px;font-size:9px}.hero{padding:112px 0 78px;min-height:auto}.hero-grid{grid-template-columns:1fr;gap:15px}.hero-content{max-width:none}.hero h1{font-size:clamp(42px,9vw,65px);letter-spacing:-1.7px}.hero-description{font-size:11px}.hero-stage{height:470px;min-height:unset;max-width:520px;width:100%;margin:-2px auto 0}.stage-disc{width:66%}.hero-gift{width:135px;height:125px;left:9%;bottom:11%}.gift-lid{width:145px;height:32px}.gift-box{top:20px}.gift-ribbon{left:52px;width:35px;height:38px}.scroll-cue{bottom:15px}.story-section{padding:75px 0}.story-grid{grid-template-columns:1fr;gap:30px}.story-title{position:static}.story-title h2{font-size:clamp(34px,8vw,48px)}.story-item{padding:18px}.story-item:hover{transform:translateY(-3px)}section.content-section{padding:78px 0}.section-heading{align-items:flex-start;flex-direction:column;gap:12px;margin-bottom:28px}.section-side-note{white-space:normal}.service-layout{grid-template-columns:1fr}.service-sidebar{position:static}.filters{display:flex;overflow-x:auto;padding-bottom:5px;scrollbar-width:thin}.filter-btn{flex:0 0 auto;white-space:nowrap}.sidebar-foot{display:none}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.golden-grid,.packages-grid{grid-template-columns:1fr;gap:15px}.golden-card{display:grid;grid-template-columns:.8fr 1.2fr}.golden-art{height:100%;min-height:340px}.golden-card-body{padding:22px}.conditions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-item{padding:18px 10px}.quick-icon{width:35px;height:35px}.final-cta{padding-bottom:100px}.footer-inner{flex-direction:column;text-align:center}.footer-social-area{flex-direction:column;gap:9px}.mobile-cta{display:block}}
+@media(max-width:540px){.container{width:calc(100% - 28px)}.brand{font-size:10px;gap:8px}.brand-symbol{width:35px;height:35px}.nav-cta{font-size:8px;padding:8px 10px}.hero{padding-top:100px}.hero h1{font-size:43px;line-height:1.4}.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hero-actions .btn{padding:0 10px;font-size:9px}.hero-caption{font-size:9px}.hero-stage{height:360px}.stage-halo{width:85%}.stage-disc{width:69%}.disc-type strong{font-size:54px}.hero-gift{transform:scale(.78) rotate(-12deg);transform-origin:bottom left;left:0;bottom:9%}.float-chip{font-size:8px;padding:7px 10px}.chip-top{right:0}.chip-bottom{right:-2%;bottom:14%}.chip-left{left:0;top:22%}.quick-grid{grid-template-columns:1fr}.quick-item{justify-content:flex-start;border-left:0;border-bottom:1px solid var(--line);padding:13px 5px}.quick-item:last-child{border-bottom:0}.quick-item strong{font-size:10px}.quick-item span{font-size:8px}.marquee-track{padding:12px 0}.section-heading h2{font-size:27px}.story-title h2{font-size:36px}.story-item{grid-template-columns:43px 1fr;gap:12px;padding:15px}.story-no{font-size:18px}.service-sidebar{padding:17px}.services-grid{grid-template-columns:1fr;gap:10px}.service-card{min-height:unset;padding:17px}.golden-card{display:flex}.golden-art{height:205px;min-height:205px}.golden-card-body{padding:19px}.golden-card h3{font-size:16px}.golden-price strong{font-size:16px}.package-card{padding:22px}.conditions-grid{grid-template-columns:1fr}.cta-box{padding:48px 17px;border-radius:20px}.cta-box h2{font-size:25px}.cta-actions{flex-direction:column}.cta-actions .btn{width:100%;max-width:290px}.social-link{width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}.hero-stage{transform:none!important}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+<nav class="navbar" id="topNav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Arsam Samadian">
+      <span class="brand-symbol">A</span><span>ARSAM SAMADIAN<small>WEB SERVICES</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">خدمات</a><a href="#golden">ایده‌های طلایی</a><a href="#packages">پکیج‌ها</a><a href="#conditions">شرایط اجرا</a>
     </div>
+    <a href="https://t.me/Zenix_Web" class="nav-cta" target="_blank" rel="noopener">مشاوره و سفارش <span>↗</span></a>
+  </div>
+</nav>
 
-    <!-- SERVICES -->
-    <section class="content-section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">OUR SERVICES / 01</span>
-            <h2>خدمات و قابلیت‌های قابل اجرا</h2>
-            <p>
-              هر مورد یک ارتقای مستقل و محدود است. خدمات را جداگانه انتخاب کن یا
-              از پکیج‌های ترکیبی استفاده کن.
-            </p>
-          </div>
-          <div class="section-side-note">
-            ◷ زمان اجرای هر مورد: حداکثر ۲ ساعت
-          </div>
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="eyebrow-dot"></span> پیشنهادهای ویژه بلک فرایدی</div>
+      <h1>فروشگاهت رو<br>برای <span class="gold">بلک فرایدی</span><br>آماده کن!</h1>
+      <p class="hero-description">مجموعه‌ای از ارتقاهای کاربردی و سریع برای فروشگاه اینترنتی؛ از جذاب‌تر کردن ظاهر کمپین تا اضافه کردن امکانات کوچک اما مؤثر در مسیر خرید مشتریان. در کنار خدمات معمول، سه ایده طلایی و اختصاصی هم برای ایجاد تجربه‌ای متفاوت در فروشگاه آماده شده است.</p>
+      <div class="hero-actions"><a href="#services" class="btn btn-primary">مشاهده خدمات <span>←</span></a><a href="#golden" class="btn btn-outline">سه ایده طلایی <span>✦</span></a></div>
+      <div class="hero-caption">خدمات محدود و کاربردی، بدون توسعه‌های سنگین و زمان‌بر</div>
+    </div>
+    <div class="hero-stage" id="heroStage" aria-label="تصویر گرافیکی بلک فرایدی">
+      <div class="stage-halo"></div><div class="stage-disc"><div class="disc-type"><small>THE BIG EVENT</small><strong>BLACK<br>FRIDAY</strong><span>UPGRADE YOUR STORE</span></div></div>
+      <div class="hero-gift"><div class="gift-box"></div><div class="gift-lid"></div><div class="gift-ribbon"></div></div>
+      <div class="float-chip chip-top">✦ پیشنهادهای اختصاصی</div><div class="float-chip chip-bottom">۲۵ خدمت کاربردی</div><div class="float-chip chip-left">۳ ایده طلایی</div>
+      <i class="stage-spark spark-one"></i><i class="stage-spark spark-two"></i><i class="stage-spark spark-three"></i>
+    </div>
+  </div>
+  <div class="scroll-cue"><i></i><span>برای کشف پیشنهادها اسکرول کن</span></div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span class="marquee-item">BLACK FRIDAY UPGRADE <b>✦</b></span><span class="marquee-item">۲۵ خدمت قابل انتخاب <b>✦</b></span><span class="marquee-item">۳ ایده طلایی اختصاصی <b>✦</b></span><span class="marquee-item">۳ پکیج پیشنهادی <b>✦</b></span><span class="marquee-item">تجربه خرید بهتر <b>✦</b></span><span class="marquee-item">BLACK FRIDAY UPGRADE <b>✦</b></span><span class="marquee-item">۲۵ خدمت قابل انتخاب <b>✦</b></span><span class="marquee-item">۳ ایده طلایی اختصاصی <b>✦</b></span><span class="marquee-item">۳ پکیج پیشنهادی <b>✦</b></span><span class="marquee-item">تجربه خرید بهتر <b>✦</b></span>
+</div></div>
+
+<div class="quick-info"><div class="container quick-grid">
+  <div class="quick-item" data-reveal><div class="quick-icon">◷</div><div><strong>اجرای سریع</strong><span>حداکثر ۲ ساعت برای هر خدمت پایه</span></div></div>
+  <div class="quick-item" data-reveal style="--delay:100ms"><div class="quick-icon">◇</div><div><strong>قیمت‌گذاری شفاف</strong><span>هزینه مشخص برای خدمات پایه</span></div></div>
+  <div class="quick-item" data-reveal style="--delay:200ms"><div class="quick-icon">✦</div><div><strong>ایده‌های اختصاصی</strong><span>سه قابلیت ویژه برای تجربه متفاوت</span></div></div>
+</div></div>
+
+<section class="story-section">
+  <div class="container story-grid">
+    <div class="story-title" data-reveal><span class="section-kicker">A BETTER STORE EXPERIENCE</span><h2>فقط تخفیف نیست؛<br><span>تجربه خرید</span> رو ارتقا بده.</h2><p>گاهی چند تغییر درست در ظاهر و مسیر خرید، می‌تونه فروشگاه رو برای اجرای یک کمپین آماده‌تر کنه. پیشنهادها رو بر اساس نیازت انتخاب کن؛ از یک تغییر کوچک تا ترکیبی از چند قابلیت.</p></div>
+    <div class="story-list">
+      <article class="story-item" data-reveal><div class="story-no">01</div><div><h3>اولین برخورد مشتری</h3><p>بنر، نوار اطلاع‌رسانی و صفحه کمپین کمک می‌کنن پیشنهادهای بلک فرایدی واضح‌تر و جذاب‌تر دیده بشن.</p></div></article>
+      <article class="story-item" data-reveal style="--delay:120ms"><div class="story-no">02</div><div><h3>مسیر خرید روان‌تر</h3><p>کارت تخفیف، نوار ارسال رایگان و پیشنهادهای مکمل می‌تونن بخشی از مسیر خرید رو کاربردی‌تر کنن.</p></div></article>
+      <article class="story-item" data-reveal style="--delay:240ms"><div class="story-no">03</div><div><h3>تعامل بیشتر با فروشگاه</h3><p>سه ایده طلایی این مجموعه برای ایجاد هیجان، تعامل و انگیزه‌ای تازه برای خرید دوباره طراحی شدن.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="content-section services-section" id="services">
+  <div class="container">
+    <div class="section-heading" data-reveal><div><span class="section-kicker">01 / OUR SERVICES</span><h2>خدمات و قابلیت‌های <span>قابل اجرا</span></h2><p>هر مورد یک ارتقای مستقل و محدود است. خدمات را جداگانه انتخاب کن یا از پکیج‌های ترکیبی استفاده کن.</p></div><div class="section-side-note">◷ زمان اجرای هر مورد: حداکثر ۲ ساعت</div></div>
+    <div class="service-layout">
+      <aside class="service-sidebar" data-reveal>
+        <span class="sidebar-label">FIND YOUR UPGRADE</span><h3>دنبال چه تغییری هستی؟</h3><p>اسم خدمت یا دسته‌بندی موردنظرت رو جست‌وجو کن تا سریع‌تر پیداش کنی.</p>
+        <div class="search-wrap"><span class="search-icon">⌕</span><input type="search" id="serviceSearch" class="search-input" placeholder="جست‌وجوی خدمات..." aria-label="جست‌وجوی خدمات"></div>
+        <div class="filters" id="filters">
+          <button class="filter-btn active" data-filter="all">همه خدمات</button><button class="filter-btn" data-filter="design">طراحی و ظاهر</button><button class="filter-btn" data-filter="campaign">کمپین و تبلیغات</button><button class="filter-btn" data-filter="sales">فروش و تخفیف</button><button class="filter-btn" data-filter="experience">تجربه خرید</button>
         </div>
-
-        <div class="toolbar">
-          <div class="search-wrap">
-            <span class="search-icon">⌕</span>
-            <input
-              type="search"
-              id="serviceSearch"
-              class="search-input"
-              placeholder="نام خدمت یا قابلیت موردنظر را جست‌وجو کن..."
-              aria-label="جست‌وجوی خدمات"
-            />
-          </div>
-
-          <div class="filters" id="filters">
-            <button class="filter-btn active" data-filter="all">
-              همه خدمات
-            </button>
-            <button class="filter-btn" data-filter="design">
-              طراحی و ظاهر
-            </button>
-            <button class="filter-btn" data-filter="campaign">
-              کمپین و تبلیغات
-            </button>
-            <button class="filter-btn" data-filter="sales">فروش و تخفیف</button>
-            <button class="filter-btn" data-filter="experience">
-              تجربه خرید
-            </button>
-          </div>
-        </div>
-
-        <div class="results-line">
-          <span>خدمات قابل مشاهده</span>
-          <strong id="resultCount">۲۵ خدمت</strong>
-        </div>
-
+        <div class="sidebar-foot">برای هر خدمت، <strong>قیمت و زمان تخمینی اجرا</strong> مشخص شده. جزئیات نهایی بعد از بررسی ساختار فروشگاه تأیید می‌شه.</div>
+      </aside>
+      <div class="service-main">
+        <div class="service-results-head"><span>خدمات قابل مشاهده</span><strong id="resultCount">۲۵ خدمت</strong></div>
         <div class="services-grid" id="servicesGrid"></div>
-        <div class="empty-state" id="emptyState">
-          موردی با این عنوان یا دسته‌بندی پیدا نشد.
-        </div>
+        <div class="empty-state" id="emptyState">موردی با این عنوان یا دسته‌بندی پیدا نشد.</div>
+        <div class="services-disclaimer" data-reveal>قیمت‌ها برای محدوده مشخص‌شده هر خدمت پایه هستند. در صورت نیاز به توسعه اختصاصی، افزونه پولی یا تغییرات خارج از محدوده، هزینه جداگانه بررسی و اعلام می‌شود.</div>
       </div>
-    </section>
-
-    <!-- GOLDEN IDEAS -->
-    <section class="content-section golden-section" id="golden">
-      <div class="container">
-        <div class="section-heading golden-heading">
-          <div>
-            <span class="section-kicker">EXCLUSIVE IDEAS / 02</span>
-            <h2>سه ایده <span>طلایی</span> برای فروشگاهت</h2>
-            <p class="golden-intro">
-              این‌ها فقط چند تغییر ظاهری نیستند؛ قابلیت‌هایی اختصاصی برای ایجاد
-              تعامل بیشتر، هیجان خرید و تشویق مشتریان به بازگشت دوباره به
-              فروشگاه هستند.
-            </p>
-          </div>
-          <div class="section-side-note">✦ پیشنهادهای ویژه و اختصاصی</div>
-        </div>
-
-        <div class="golden-grid">
-          <!-- GOLDEN IDEA 1 -->
-          <article class="golden-card">
-            <div class="golden-card-top">
-              <span class="golden-number">GOLDEN IDEA 01</span>
-              <span class="golden-badge">ایده طلایی</span>
-            </div>
-
-            <div class="golden-icon">🎁</div>
-
-            <h3>شکارچی تخفیف</h3>
-
-            <p>
-              یک بازی جذاب داخل فروشگاه که مشتری با انتخاب یک جعبه یا کارت مخفی،
-              شانس خودش را برای دریافت جایزه امتحان می‌کند. بعد از انتخاب، جایزه
-              به او نمایش داده می‌شود؛ از تخفیف خرید گرفته تا ارسال رایگان یا یک
-              هدیه ویژه.
-            </p>
-
-            <ul class="golden-features">
-              <li>طراحی اختصاصی بازی هماهنگ با ظاهر فروشگاه</li>
-              <li>امکان تعریف چند نوع جایزه متفاوت</li>
-              <li>نمایش نتیجه پس از انتخاب جعبه یا کارت</li>
-              <li>امکان ارائه کد تخفیف یا پیشنهاد ویژه به برنده</li>
-            </ul>
-
-            <div class="golden-meta">
-              <span>زمان اجرای تخمینی</span>
-              <strong>حدود ۲ ساعت</strong>
-            </div>
-
-            <div class="golden-price">
-              <div>
-                <small>هزینه پیاده‌سازی</small>
-                <strong>۲٬۴۰۰٬۰۰۰ <span>تومان</span></strong>
-              </div>
-              <a
-                href="https://t.me/Zenix_Web"
-                class="golden-order"
-                target="_blank"
-                rel="noopener"
-                >سفارش ایده ↗</a
-              >
-            </div>
-          </article>
-
-          <!-- GOLDEN IDEA 2 -->
-          <article class="golden-card">
-            <div class="golden-card-top">
-              <span class="golden-number">GOLDEN IDEA 02</span>
-              <span class="golden-badge">ایده طلایی</span>
-            </div>
-
-            <div class="golden-icon">🎴</div>
-
-            <h3>کارت جایزه خرید بعدی</h3>
-
-            <p>
-              بعد از ثبت سفارش، یک کارت دیجیتال اختصاصی به مشتری نمایش داده
-              می‌شود. مشتری کارت را باز می‌کند و جایزه‌ای را می‌بیند که برای
-              خرید بعدی در انتظار اوست؛ به این شکل خرید فعلی می‌تواند شروع یک
-              خرید دیگر باشد.
-            </p>
-
-            <ul class="golden-features">
-              <li>نمایش کارت جایزه پس از ثبت سفارش</li>
-              <li>نمایش جایزه پس از بازکردن کارت</li>
-              <li>امکان تعریف تخفیف، ارسال رایگان یا هدیه</li>
-              <li>امکان ارائه پیشنهاد اختصاصی برای دسته‌ای از محصولات</li>
-            </ul>
-
-            <div class="golden-meta">
-              <span>زمان اجرای تخمینی</span>
-              <strong>۲ تا ۳ ساعت</strong>
-            </div>
-
-            <div class="golden-price">
-              <div>
-                <small>هزینه پیاده‌سازی</small>
-                <strong>۲٬۶۰۰٬۰۰۰ <span>تومان</span></strong>
-              </div>
-              <a
-                href="https://t.me/Zenix_Web"
-                class="golden-order"
-                target="_blank"
-                rel="noopener"
-                >سفارش ایده ↗</a
-              >
-            </div>
-          </article>
-
-          <!-- GOLDEN IDEA 3 -->
-          <article class="golden-card">
-            <div class="golden-card-top">
-              <span class="golden-number">GOLDEN IDEA 03</span>
-              <span class="golden-badge">ایده طلایی</span>
-            </div>
-
-            <div class="golden-icon">🔐</div>
-
-            <h3>شکار کد طلایی</h3>
-
-            <p>
-              مشتریان باید صفحات اجتماعی فروشگاه را دنبال کنند و منتظر انتشار
-              کدهای تخفیف مخفی بمانند. صاحب فروشگاه در زمان‌های مختلف، کدهای
-              محدود را در شبکه‌های اجتماعی منتشر می‌کند و کسانی که زودتر کد
-              معتبر را در صفحه کمپین سایت ثبت کنند، برنده می‌شوند.
-            </p>
-
-            <ul class="golden-features">
-              <li>صفحه اختصاصی برای واردکردن کدهای تخفیف</li>
-              <li>تعریف کدها و ظرفیت محدود برای هر کد</li>
-              <li>ثبت برندگان بر اساس زمان استفاده از کد</li>
-              <li>مدیریت تاریخ اعتبار و تعداد استفاده از کدها</li>
-              <li>نمایش وضعیت کد و ظرفیت باقی‌مانده</li>
-            </ul>
-
-            <div class="golden-meta">
-              <span>زمان اجرای تخمینی</span>
-              <strong>۴ تا ۵ ساعت</strong>
-            </div>
-
-            <div class="golden-price">
-              <div>
-                <small>هزینه پیاده‌سازی</small>
-                <strong>۴٬۵۰۰٬۰۰۰ <span>تومان</span></strong>
-              </div>
-              <a
-                href="https://t.me/Zenix_Web"
-                class="golden-order"
-                target="_blank"
-                rel="noopener"
-                >سفارش ایده ↗</a
-              >
-            </div>
-          </article>
-        </div>
-
-        <div class="golden-note">
-          <strong>نکته درباره اجرای ایده‌ها:</strong>
-          جزئیات نهایی هر ایده پس از بررسی قالب، افزونه‌ها و ساختار فروشگاه مشخص
-          می‌شود. در «شکارچی تخفیف»، محدودیت واقعی استفاده یک‌باره از جایزه برای
-          هر کاربر نیازمند پیاده‌سازی سمت سرور و بررسی جداگانه است. در «شکار کد
-          طلایی» نیز دنبال‌کردن صفحات اجتماعی به‌صورت خودکار از طریق سایت قابل
-          تأیید قطعی نیست و باید به‌عنوان شرط شرکت در کمپین اعلام و در صورت نیاز
-          دستی بررسی شود.
-        </div>
-      </div>
-    </section>
-
-    <!-- PACKAGES -->
-    <section class="content-section packages-section" id="packages">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">SPECIAL PACKAGES / 03</span>
-            <h2>پکیج‌های پیشنهادی</h2>
-            <p>
-              چند قابلیت کاربردی در کنار هم، با هزینه مناسب‌تر؛ بدون اینکه پروژه
-              به یک کار چندروزه تبدیل شود.
-            </p>
-          </div>
-          <div class="section-side-note">حداکثر زمان هر پکیج: ۶ ساعت</div>
-        </div>
-
-        <div class="packages-grid">
-          <article class="package-card">
-            <span class="package-tag">PACKAGE 01 / START</span>
-            <h3>پکیج ویترین بلک فرایدی</h3>
-            <p class="package-description">
-              برای فروشگاه‌هایی که می‌خواهند ظاهر کمپین و محصولات تخفیف‌دار خود
-              را جذاب‌تر نمایش دهند.
-            </p>
-            <div class="package-price">
-              <strong>۲٬۷۵۰٬۰۰۰</strong><span>تومان</span>
-            </div>
-            <div class="package-duration">
-              <span>زمان اجرای تخمینی</span><strong>۴ ساعت و ۳۵ دقیقه</strong>
-            </div>
-            <div class="package-list-title">محتویات پکیج</div>
-            <ul class="package-list">
-              <li>طراحی و نصب بنر اختصاصی کمپین</li>
-              <li>نوار اطلاع‌رسانی بالای سایت</li>
-              <li>بخش محصولات منتخب در صفحه اصلی</li>
-              <li>برچسب درصد تخفیف محصولات</li>
-              <li>لینک ویژه بلک فرایدی در منو</li>
-            </ul>
-            <a
-              href="https://t.me/Zenix_Web"
-              class="btn btn-secondary package-btn"
-              target="_blank"
-              rel="noopener"
-              >درخواست این پکیج</a
-            >
-          </article>
-
-          <article class="package-card">
-            <span class="package-tag">PACKAGE 02 / SALES</span>
-            <h3>پکیج تکمیل خرید</h3>
-            <p class="package-description">
-              مجموعه‌ای از ابزارهای ساده برای نمایش پیشنهادها و تشویق مشتری به
-              کامل کردن سبد خرید.
-            </p>
-            <div class="package-price">
-              <strong>۲٬۸۵۰٬۰۰۰</strong><span>تومان</span>
-            </div>
-            <div class="package-duration">
-              <span>زمان اجرای تخمینی</span><strong>۴ ساعت و ۵۰ دقیقه</strong>
-            </div>
-            <div class="package-list-title">محتویات پکیج</div>
-            <ul class="package-list">
-              <li>کارت کد تخفیف با دکمه کپی</li>
-              <li>ایجاد و تنظیم کوپن تخفیف</li>
-              <li>نوار پیشرفت ارسال رایگان</li>
-              <li>پیشنهاد محصولات مکمل در سبد خرید</li>
-              <li>پیام اطلاع‌رسانی در سبد و تسویه</li>
-            </ul>
-            <a
-              href="https://t.me/Zenix_Web"
-              class="btn btn-secondary package-btn"
-              target="_blank"
-              rel="noopener"
-              >درخواست این پکیج</a
-            >
-          </article>
-
-          <article class="package-card featured">
-            <span class="package-featured-label">پیشنهاد ویژه</span>
-            <span class="package-tag">PACKAGE 03 / COMPLETE</span>
-            <h3>پکیج کمپین آماده اجرا</h3>
-            <p class="package-description">
-              یک ترکیب کامل‌تر برای آماده‌سازی کمپین بلک فرایدی با چند ابزار
-              تبلیغاتی و فروش.
-            </p>
-            <div class="package-price">
-              <strong>۳٬۵۵۰٬۰۰۰</strong><span>تومان</span>
-            </div>
-            <div class="package-duration">
-              <span>زمان اجرای تخمینی</span><strong>۵ ساعت و ۵۰ دقیقه</strong>
-            </div>
-            <div class="package-list-title">محتویات پکیج</div>
-            <ul class="package-list">
-              <li>نوار اطلاع‌رسانی بالای سایت</li>
-              <li>بنر اختصاصی کمپین</li>
-              <li>تایمر شمارش معکوس</li>
-              <li>پاپ‌آپ پیشنهاد ویژه</li>
-              <li>برچسب درصد تخفیف محصولات</li>
-              <li>کارت کد تخفیف با قابلیت کپی</li>
-            </ul>
-            <a
-              href="https://t.me/Zenix_Web"
-              class="btn btn-primary package-btn"
-              target="_blank"
-              rel="noopener"
-              >درخواست این پکیج</a
-            >
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONDITIONS -->
-    <section class="content-section" id="conditions">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">IMPORTANT NOTES / 04</span>
-            <h2>قبل از ثبت سفارش</h2>
-            <p>
-              برای اینکه زمان و هزینه اجرا دقیق و شفاف باشد، چند نکته را در نظر
-              بگیر.
-            </p>
-          </div>
-        </div>
-
-        <div class="conditions-grid">
-          <article class="condition">
-            <div class="condition-icon">⌘</div>
-            <h3>مناسب فروشگاه‌های فعال</h3>
-            <p>
-              خدمات بر اساس ساختار فعلی فروشگاه و امکانات موجود آن اجرا می‌شود.
-            </p>
-          </article>
-
-          <article class="condition">
-            <div class="condition-icon">◷</div>
-            <h3>زمان اجرای محدود</h3>
-            <p>
-              هر خدمت برای یک محدوده مشخص طراحی شده است؛ زمان‌های درج‌شده تخمینی
-              هستند.
-            </p>
-          </article>
-
-          <article class="condition">
-            <div class="condition-icon">◇</div>
-            <h3>بررسی فنی قبل از اجرا</h3>
-            <p>سازگاری قالب و افزونه‌های موجود پیش از شروع کار بررسی می‌شود.</p>
-          </article>
-
-          <article class="condition">
-            <div class="condition-icon">＋</div>
-            <h3>هزینه افزونه‌های جانبی</h3>
-            <p>
-              در صورت نیاز به افزونه پولی یا سرویس جانبی، هزینه آن جداگانه
-              محاسبه می‌شود.
-            </p>
-          </article>
-
-          <article class="condition">
-            <div class="condition-icon">✦</div>
-            <h3>امکان سفارش ترکیبی</h3>
-            <p>
-              می‌توانی چند خدمت را انتخاب کنی و برای اجرای ترکیبی درخواست قیمت
-              بدهی.
-            </p>
-          </article>
-
-          <article class="condition">
-            <div class="condition-icon">✓</div>
-            <h3>توافق پیش از شروع</h3>
-            <p>
-              محدوده دقیق کار، هزینه نهایی و زمان تحویل قبل از شروع تأیید
-              می‌شود.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CONTACT CTA -->
-    <section class="final-cta">
-      <div class="container">
-        <div class="cta-box">
-          <span class="section-kicker">LET'S GET STARTED</span>
-          <h2>برای ارتقای فروشگاهت آماده‌ای؟</h2>
-          <p>
-            فروشگاهت را معرفی کن و قابلیت‌های موردنظرت را انتخاب کن. برای بررسی
-            شرایط فنی، دریافت مشاوره و اطلاع از هزینه اجرای خدمات از راه‌های
-            ارتباطی زیر با من در تماس باش.
-          </p>
-
-          <div class="cta-actions">
-            <a
-              href="https://t.me/Zenix_Web"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>✈</span> پیام در تلگرام
-            </a>
-            <a href="tel:+989366712403" class="btn cta-phone" dir="ltr">
-              <span>☎</span> +98 936 671 2403
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container footer-inner">
-        <div class="footer-brand-area">
-          <div class="footer-brand">ARSAM <span>SAMADIAN</span></div>
-          <div class="footer-copy">طراحی و توسعه وب | Zenix Web Services</div>
-        </div>
-
-        <div class="footer-social-area">
-          <span class="social-title"
-            >من را در شبکه‌های اجتماعی دنبال کنید:</span
-          >
-          <div class="footer-socials">
-            <a
-              class="social-link social-instagram"
-              href="https://www.instagram.com/arsam_samadian?igsi=d29seTI0bHkwOXZ5"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle
-                  cx="17.5"
-                  cy="6.5"
-                  r="1"
-                  fill="currentColor"
-                  stroke="none"
-                />
-              </svg>
-            </a>
-
-            <a
-              class="social-link social-linkedin"
-              href="https://www.linkedin.com/in/arsam-samadian-037063414?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"
-                />
-              </svg>
-            </a>
-
-            <a
-              class="social-link social-telegram"
-              href="https://t.me/Zenix_Web"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Telegram"
-              title="Telegram"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M21.94 3.16a1.5 1.5 0 0 0-1.58-.23L2.7 9.9c-1.2.48-1.18 1.14-.22 1.44l4.54 1.42 1.74 5.43c.2.6.1.83.73.83.49 0 .71-.22.98-.49l2.2-2.14 4.57 3.38c.84.47 1.45.22 1.66-.78l3-14.1c.31-1.27-.49-1.85-1.26-1.53ZM8.68 12.4l9.01-5.68c.45-.27.87-.13.53.17l-7.45 6.72-.29 3.06-1.8-4.27Z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-copy">© 2026 All Rights Reserved</div>
-      </div>
-    </footer>
-
-    <!-- MOBILE STICKY CTA -->
-    <div class="mobile-cta">
-      <a href="https://t.me/Zenix_Web" target="_blank" rel="noopener"
-        >مشاوره و ثبت سفارش در تلگرام ↗</a
-      >
     </div>
+  </div>
+</section>
 
-    <script>
-      /*
-  اطلاعات ۲۵ خدمت پایه
-  نام، توضیح، قیمت، زمان اجرا و دسته‌بندی
-*/
-
-      const services = [
-        {
-          name: "نوار اطلاع‌رسانی بالای سایت",
-          description:
-            "نمایش یک نوار جمع‌وجور در بالای سایت برای اعلام شروع کمپین، تخفیف ویژه یا پیام تبلیغاتی.",
-          price: "۴۵۰٬۰۰۰",
-          time: "۳۵ دقیقه",
-          category: "campaign",
-          label: "کمپین و تبلیغات",
-        },
-        {
-          name: "نوار چسبان مخصوص موبایل",
-          description:
-            "افزودن یک نوار ثابت در پایین صفحه موبایل با پیام تبلیغاتی و لینک مستقیم به محصولات کمپین.",
-          price: "۶۵۰٬۰۰۰",
-          time: "۵۰ دقیقه",
-          category: "design",
-          label: "طراحی و ظاهر",
-        },
-        {
-          name: "بنر اختصاصی بلک فرایدی",
-          description:
-            "طراحی یک بنر تبلیغاتی متناسب با هویت فروشگاه برای استفاده در صفحه اصلی، دسکتاپ و موبایل.",
-          price: "۸۵۰٬۰۰۰",
-          time: "۹۰ دقیقه",
-          category: "design",
-          label: "طراحی و ظاهر",
-        },
-        {
-          name: "لینک ویژه کمپین در منوی سایت",
-          description:
-            "افزودن یک دسترسی مشخص در منوی اصلی برای ورود سریع مشتریان به محصولات بلک فرایدی.",
-          price: "۴۰۰٬۰۰۰",
-          time: "۳۰ دقیقه",
-          category: "campaign",
-          label: "کمپین و تبلیغات",
-        },
-        {
-          name: "بخش محصولات منتخب صفحه اصلی",
-          description:
-            "ایجاد یک سکشن اختصاصی برای نمایش محصولات منتخب و تخفیف‌دار در صفحه اصلی فروشگاه.",
-          price: "۷۵۰٬۰۰۰",
-          time: "۷۵ دقیقه",
-          category: "design",
-          label: "طراحی و ظاهر",
-        },
-        {
-          name: "تایمر شمارش معکوس",
-          description:
-            "قرار دادن یک تایمر در یک بخش مشخص از سایت برای نمایش زمان باقی‌مانده تا پایان کمپین.",
-          price: "۵۵۰٬۰۰۰",
-          time: "۴۵ دقیقه",
-          category: "campaign",
-          label: "کمپین و تبلیغات",
-        },
-        {
-          name: "پاپ‌آپ پیشنهاد ویژه",
-          description:
-            "تنظیم یک پنجره تبلیغاتی برای نمایش پیشنهاد کمپین هنگام ورود یا پس از چند ثانیه حضور کاربر.",
-          price: "۸۰۰٬۰۰۰",
-          time: "۷۵ دقیقه",
-          category: "campaign",
-          label: "کمپین و تبلیغات",
-        },
-        {
-          name: "برچسب درصد تخفیف محصولات",
-          description:
-            "نمایش درصد تخفیف محصولات به شکل یک برچسب هماهنگ و خوانا روی تصاویر محصول.",
-          price: "۵۵۰٬۰۰۰",
-          time: "۴۵ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "برچسب متنی پیشنهاد ویژه",
-          description:
-            "افزودن برچسب‌هایی مانند پرفروش، پیشنهاد ویژه یا منتخب کمپین به محصولات مشخص.",
-          price: "۴۵۰٬۰۰۰",
-          time: "۳۵ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "هماهنگ‌سازی رنگ و دکمه‌های کمپین",
-          description:
-            "تغییر رنگ و ظاهر دکمه‌ها، لینک‌ها و المان‌های منتخب برای هماهنگی با کمپین تبلیغاتی.",
-          price: "۶۵۰٬۰۰۰",
-          time: "۶۰ دقیقه",
-          category: "design",
-          label: "طراحی و ظاهر",
-        },
-        {
-          name: "صفحه جمع‌وجور اختصاصی کمپین",
-          description:
-            "ساخت یک صفحه فرود ساده با استفاده از چیدمان‌های آماده و بخش‌های محدود معرفی پیشنهادها.",
-          price: "۱٬۳۵۰٬۰۰۰",
-          time: "۱۲۰ دقیقه",
-          category: "design",
-          label: "طراحی و ظاهر",
-        },
-        {
-          name: "کارت کد تخفیف با دکمه کپی",
-          description:
-            "طراحی یک کارت تبلیغاتی در سایت که کد تخفیف را نمایش دهد و امکان کپی سریع آن را فراهم کند.",
-          price: "۶۵۰٬۰۰۰",
-          time: "۶۰ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "ایجاد و تنظیم کوپن ووکامرس",
-          description:
-            "ساخت و تنظیم یک کد تخفیف در ووکامرس با تاریخ اعتبار و محدودیت‌های مشخص.",
-          price: "۴۵۰٬۰۰۰",
-          time: "۳۵ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "نوار پیشرفت ارسال رایگان",
-          description:
-            "نمایش مبلغ باقی‌مانده تا رسیدن سبد خرید به حداقل مبلغ تعیین‌شده برای ارسال رایگان.",
-          price: "۹۵۰٬۰۰۰",
-          time: "۹۰ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "پیشنهاد محصولات مکمل در سبد خرید",
-          description:
-            "انتخاب و نمایش چند محصول مکمل یا مرتبط در بخش سبد خرید با استفاده از امکانات موجود سایت.",
-          price: "۶۵۰٬۰۰۰",
-          time: "۶۰ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-        {
-          name: "تخفیف پلکانی ساده",
-          description:
-            "تنظیم حداکثر دو سطح تخفیف بر اساس تعداد یا مبلغ خرید، با استفاده از افزونه سازگار موجود.",
-          price: "۱٬۱۰۰٬۰۰۰",
-          time: "۹۰ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "هدیه همراه خرید",
-          description:
-            "تنظیم یک پیشنهاد هدیه برای سفارش‌های واجد شرایط، با استفاده از افزونه سازگار موجود.",
-          price: "۱٬۱۰۰٬۰۰۰",
-          time: "۹۰ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "اعلان حداقل مبلغ سفارش",
-          description:
-            "نمایش یک پیام کوتاه در سبد خرید برای اطلاع‌رسانی درباره حداقل مبلغ موردنیاز سفارش.",
-          price: "۵۵۰٬۰۰۰",
-          time: "۴۵ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "اطلاع‌رسانی روش پرداخت و ارسال",
-          description:
-            "نمایش یک پیام یا نوار اطلاع‌رسانی درباره شرایط ارسال، پرداخت یا مزایای خرید در مرحله تسویه.",
-          price: "۴۵۰٬۰۰۰",
-          time: "۳۵ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-        {
-          name: "آیکون مزایای خرید کنار دکمه سفارش",
-          description:
-            "نمایش چند مزیت کوتاه مثل ضمانت اصالت، پشتیبانی یا ارسال سریع در نزدیکی دکمه خرید.",
-          price: "۶۰۰٬۰۰۰",
-          time: "۵۰ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-        {
-          name: "اطلاعات ارسال و مرجوعی محصول",
-          description:
-            "افزودن متن کوتاه و منظم درباره شرایط ارسال و بازگشت کالا در صفحه محصول.",
-          price: "۵۵۰٬۰۰۰",
-          time: "۴۵ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-        {
-          name: "بخش پرسش و پاسخ محصول",
-          description:
-            "ساخت یک بخش آکاردئونی برای نمایش حداکثر پنج پرسش و پاسخ آماده در صفحه محصول یا کمپین.",
-          price: "۶۵۰٬۰۰۰",
-          time: "۶۰ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-        {
-          name: "پیام اختصاصی سبد و تسویه",
-          description:
-            "افزودن یک پیام کوتاه برای یادآوری کد تخفیف، شرایط ارسال یا پیشنهاد ویژه در سبد خرید.",
-          price: "۴۰۰٬۰۰۰",
-          time: "۳۰ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-        {
-          name: "نمایش موجودی محصول",
-          description:
-            "فعال‌سازی و تنظیم نمایش وضعیت یا تعداد موجودی محصولات با استفاده از قابلیت‌های ووکامرس.",
-          price: "۵۵۰٬۰۰۰",
-          time: "۴۵ دقیقه",
-          category: "sales",
-          label: "فروش و تخفیف",
-        },
-        {
-          name: "بخش محصولات مشاهده‌شده اخیر",
-          description:
-            "نمایش یک بخش کوچک از محصولاتی که کاربر اخیراً مشاهده کرده است، با امکانات موجود قالب یا افزونه.",
-          price: "۷۵۰٬۰۰۰",
-          time: "۷۵ دقیقه",
-          category: "experience",
-          label: "تجربه خرید",
-        },
-      ];
-
-      /* RENDER SERVICES */
-      const grid = document.getElementById("servicesGrid");
-      const searchInput = document.getElementById("serviceSearch");
-      const resultCount = document.getElementById("resultCount");
-      const emptyState = document.getElementById("emptyState");
-      const filterButtons = document.querySelectorAll(".filter-btn");
-
-      let activeCategory = "all";
-
-      const persianNumbers = (value) => Number(value).toLocaleString("fa-IR");
-
-      function renderServices() {
-        const query = searchInput.value.trim().toLowerCase();
-
-        const filtered = services.filter((service) => {
-          const matchesText =
-            service.name.toLowerCase().includes(query) ||
-            service.description.toLowerCase().includes(query);
-
-          const matchesCategory =
-            activeCategory === "all" || service.category === activeCategory;
-
-          return matchesText && matchesCategory;
-        });
-
-        grid.innerHTML = filtered
-          .map((service) => {
-            const originalIndex = services.indexOf(service);
-            const number = persianNumbers(originalIndex + 1);
-
-            return `
-      <article class="service-card">
-        <div class="card-top">
-          <span class="card-number">${number}</span>
-          <span class="card-category">${service.label}</span>
-        </div>
-
-        <h3>${service.name}</h3>
-        <p>${service.description}</p>
-
-        <div class="card-meta">
-          <span class="clock-icon">◷</span>
-          <span>زمان اجرا: ${service.time}</span>
-        </div>
-
-        <div class="card-bottom">
-          <div>
-            <span class="price-label">هزینه اجرای پایه</span>
-            <div class="card-price">${service.price} <small>تومان</small></div>
-          </div>
-
-          <a class="card-order" href="https://t.me/Zenix_Web"
-            target="_blank" rel="noopener noreferrer">
-            سفارش خدمت ↗
-          </a>
+<section class="content-section golden-section" id="golden">
+  <div class="container">
+    <div class="section-heading golden-heading" data-reveal><div><span class="section-kicker">02 / EXCLUSIVE IDEAS</span><h2>سه ایده <span>طلایی</span> برای فروشگاهت</h2><p>این‌ها فقط چند تغییر ظاهری نیستند؛ قابلیت‌هایی اختصاصی برای ایجاد تعامل بیشتر، هیجان خرید و تشویق مشتریان به بازگشت دوباره به فروشگاه هستند.</p></div><div class="section-side-note">✦ پیشنهادهای ویژه و اختصاصی</div></div>
+    <div class="golden-grid">
+      <article class="golden-card" data-reveal>
+        <div class="golden-art art-hunt"><div class="art-orbit"></div><div class="art-glow"></div><div class="golden-symbol">🎁</div></div>
+        <div class="golden-card-body"><div class="golden-card-top"><span class="golden-number">GOLDEN IDEA 01</span><span class="golden-badge">ایده طلایی</span></div><h3>شکارچی تخفیف</h3>
+          <p>یک بازی جذاب داخل فروشگاه که مشتری با انتخاب یک جعبه یا کارت مخفی، شانس خودش را برای دریافت جایزه امتحان می‌کند. بعد از انتخاب، جایزه به او نمایش داده می‌شود؛ از تخفیف خرید گرفته تا ارسال رایگان یا یک هدیه ویژه.</p>
+          <ul class="golden-features"><li>طراحی اختصاصی بازی هماهنگ با ظاهر فروشگاه</li><li>امکان تعریف چند نوع جایزه متفاوت</li><li>نمایش نتیجه پس از انتخاب جعبه یا کارت</li><li>امکان ارائه کد تخفیف یا پیشنهاد ویژه به برنده</li></ul>
+          <div class="golden-meta"><span>زمان اجرای تخمینی</span><strong>حدود ۲ ساعت</strong></div><div class="golden-price"><div><small>هزینه پیاده‌سازی</small><strong>۲٬۴۰۰٬۰۰۰ <span>تومان</span></strong></div><a href="https://t.me/Zenix_Web" class="golden-order" target="_blank" rel="noopener">سفارش ایده ↗</a></div>
         </div>
       </article>
-    `;
-          })
-          .join("");
+      <article class="golden-card" data-reveal style="--delay:130ms">
+        <div class="golden-art art-card"><div class="art-orbit"></div><div class="art-glow"></div><div class="golden-symbol">✦</div></div>
+        <div class="golden-card-body"><div class="golden-card-top"><span class="golden-number">GOLDEN IDEA 02</span><span class="golden-badge">ایده طلایی</span></div><h3>کارت جایزه خرید بعدی</h3>
+          <p>بعد از ثبت سفارش، یک کارت دیجیتال اختصاصی به مشتری نمایش داده می‌شود. مشتری کارت را باز می‌کند و جایزه‌ای را می‌بیند که برای خرید بعدی در انتظار اوست؛ به این شکل خرید فعلی می‌تواند شروع یک خرید دیگر باشد.</p>
+          <ul class="golden-features"><li>نمایش کارت جایزه پس از ثبت سفارش</li><li>نمایش جایزه پس از بازکردن کارت</li><li>امکان تعریف تخفیف، ارسال رایگان یا هدیه</li><li>امکان ارائه پیشنهاد اختصاصی برای دسته‌ای از محصولات</li></ul>
+          <div class="golden-meta"><span>زمان اجرای تخمینی</span><strong>۲ تا ۳ ساعت</strong></div><div class="golden-price"><div><small>هزینه پیاده‌سازی</small><strong>۲٬۶۰۰٬۰۰۰ <span>تومان</span></strong></div><a href="https://t.me/Zenix_Web" class="golden-order" target="_blank" rel="noopener">سفارش ایده ↗</a></div>
+        </div>
+      </article>
+      <article class="golden-card" data-reveal style="--delay:260ms">
+        <div class="golden-art art-code"><div class="art-orbit"></div><div class="art-glow"></div><div class="golden-symbol">⌁</div></div>
+        <div class="golden-card-body"><div class="golden-card-top"><span class="golden-number">GOLDEN IDEA 03</span><span class="golden-badge">ایده طلایی</span></div><h3>شکار کد طلایی</h3>
+          <p>مشتریان باید صفحات اجتماعی فروشگاه را دنبال کنند و منتظر انتشار کدهای تخفیف مخفی بمانند. صاحب فروشگاه در زمان‌های مختلف، کدهای محدود را در شبکه‌های اجتماعی منتشر می‌کند و کسانی که زودتر کد معتبر را در صفحه کمپین سایت ثبت کنند، برنده می‌شوند.</p>
+          <ul class="golden-features"><li>صفحه اختصاصی برای واردکردن کدهای تخفیف</li><li>تعریف کدها و ظرفیت محدود برای هر کد</li><li>ثبت برندگان بر اساس زمان استفاده از کد</li><li>مدیریت تاریخ اعتبار و تعداد استفاده از کدها</li><li>نمایش وضعیت کد و ظرفیت باقی‌مانده</li></ul>
+          <div class="golden-meta"><span>زمان اجرای تخمینی</span><strong>۴ تا ۵ ساعت</strong></div><div class="golden-price"><div><small>هزینه پیاده‌سازی</small><strong>۴٬۵۰۰٬۰۰۰ <span>تومان</span></strong></div><a href="https://t.me/Zenix_Web" class="golden-order" target="_blank" rel="noopener">سفارش ایده ↗</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="golden-note" data-reveal><strong>نکته درباره اجرای ایده‌ها:</strong> جزئیات نهایی هر ایده پس از بررسی قالب، افزونه‌ها و ساختار فروشگاه مشخص می‌شود. در «شکارچی تخفیف»، محدودیت واقعی استفاده یک‌باره از جایزه برای هر کاربر نیازمند پیاده‌سازی سمت سرور و بررسی جداگانه است. در «شکار کد طلایی» نیز دنبال‌کردن صفحات اجتماعی به‌صورت خودکار از طریق سایت قابل تأیید قطعی نیست و باید به‌عنوان شرط شرکت در کمپین اعلام و در صورت نیاز دستی بررسی شود.</div>
+  </div>
+</section>
 
-        resultCount.textContent = persianNumbers(filtered.length) + " خدمت";
-        emptyState.style.display = filtered.length === 0 ? "block" : "none";
-      }
+<section class="content-section packages-section" id="packages">
+  <div class="container">
+    <div class="section-heading" data-reveal><div><span class="section-kicker">03 / SPECIAL PACKAGES</span><h2>پکیج‌های <span>پیشنهادی</span></h2><p>چند قابلیت کاربردی در کنار هم، با هزینه مناسب‌تر؛ بدون اینکه پروژه به یک کار چندروزه تبدیل شود.</p></div><div class="section-side-note">حداکثر زمان هر پکیج: ۶ ساعت</div></div>
+    <div class="packages-grid">
+      <article class="package-card" data-reveal><span class="package-tag">PACKAGE 01 / START</span><h3>پکیج ویترین بلک فرایدی</h3><p class="package-description">برای فروشگاه‌هایی که می‌خواهند ظاهر کمپین و محصولات تخفیف‌دار خود را جذاب‌تر نمایش دهند.</p><div class="package-price"><strong>۲٬۷۵۰٬۰۰۰</strong><span>تومان</span></div><div class="package-duration"><span>زمان اجرای تخمینی</span><strong>۴ ساعت و ۳۵ دقیقه</strong></div><div class="package-list-title">محتویات پکیج</div><ul class="package-list"><li>طراحی و نصب بنر اختصاصی کمپین</li><li>نوار اطلاع‌رسانی بالای سایت</li><li>بخش محصولات منتخب در صفحه اصلی</li><li>برچسب درصد تخفیف محصولات</li><li>لینک ویژه بلک فرایدی در منو</li></ul><a href="https://t.me/Zenix_Web" class="btn btn-outline package-btn" target="_blank" rel="noopener">درخواست این پکیج ↗</a></article>
+      <article class="package-card" data-reveal style="--delay:130ms"><span class="package-tag">PACKAGE 02 / SALES</span><h3>پکیج تکمیل خرید</h3><p class="package-description">مجموعه‌ای از ابزارهای ساده برای نمایش پیشنهادها و تشویق مشتری به کامل کردن سبد خرید.</p><div class="package-price"><strong>۲٬۸۵۰٬۰۰۰</strong><span>تومان</span></div><div class="package-duration"><span>زمان اجرای تخمینی</span><strong>۴ ساعت و ۵۰ دقیقه</strong></div><div class="package-list-title">محتویات پکیج</div><ul class="package-list"><li>کارت کد تخفیف با دکمه کپی</li><li>ایجاد و تنظیم کوپن تخفیف</li><li>نوار پیشرفت ارسال رایگان</li><li>پیشنهاد محصولات مکمل در سبد خرید</li><li>پیام اطلاع‌رسانی در سبد و تسویه</li></ul><a href="https://t.me/Zenix_Web" class="btn btn-outline package-btn" target="_blank" rel="noopener">درخواست این پکیج ↗</a></article>
+      <article class="package-card featured" data-reveal style="--delay:260ms"><span class="package-featured-label">پیشنهاد ویژه</span><span class="package-tag">PACKAGE 03 / COMPLETE</span><h3>پکیج کمپین آماده اجرا</h3><p class="package-description">یک ترکیب کامل‌تر برای آماده‌سازی کمپین بلک فرایدی با چند ابزار تبلیغاتی و فروش.</p><div class="package-price"><strong>۳٬۵۵۰٬۰۰۰</strong><span>تومان</span></div><div class="package-duration"><span>زمان اجرای تخمینی</span><strong>۵ ساعت و ۵۰ دقیقه</strong></div><div class="package-list-title">محتویات پکیج</div><ul class="package-list"><li>نوار اطلاع‌رسانی بالای سایت</li><li>بنر اختصاصی کمپین</li><li>تایمر شمارش معکوس</li><li>پاپ‌آپ پیشنهاد ویژه</li><li>برچسب درصد تخفیف محصولات</li><li>کارت کد تخفیف با قابلیت کپی</li></ul><a href="https://t.me/Zenix_Web" class="btn btn-primary package-btn" target="_blank" rel="noopener">درخواست این پکیج ↗</a></article>
+    </div>
+  </div>
+</section>
 
-      /* SEARCH */
-      searchInput.addEventListener("input", renderServices);
+<section class="content-section conditions-section" id="conditions">
+  <div class="container">
+    <div class="section-heading" data-reveal><div><span class="section-kicker">04 / BEFORE YOU ORDER</span><h2>قبل از <span>ثبت سفارش</span></h2><p>برای اینکه زمان و هزینه اجرا دقیق و شفاف باشد، چند نکته را در نظر بگیر.</p></div></div>
+    <div class="conditions-grid">
+      <article class="condition" data-reveal><div class="condition-icon">⌘</div><h3>مناسب فروشگاه‌های فعال</h3><p>خدمات بر اساس ساختار فعلی فروشگاه و امکانات موجود آن اجرا می‌شود.</p></article>
+      <article class="condition" data-reveal style="--delay:80ms"><div class="condition-icon">◷</div><h3>زمان اجرای محدود</h3><p>هر خدمت برای یک محدوده مشخص طراحی شده است؛ زمان‌های درج‌شده تخمینی هستند.</p></article>
+      <article class="condition" data-reveal style="--delay:160ms"><div class="condition-icon">◇</div><h3>بررسی فنی قبل از اجرا</h3><p>سازگاری قالب و افزونه‌های موجود پیش از شروع کار بررسی می‌شود.</p></article>
+      <article class="condition" data-reveal style="--delay:80ms"><div class="condition-icon">＋</div><h3>هزینه افزونه‌های جانبی</h3><p>در صورت نیاز به افزونه پولی یا سرویس جانبی، هزینه آن جداگانه محاسبه می‌شود.</p></article>
+      <article class="condition" data-reveal style="--delay:160ms"><div class="condition-icon">✦</div><h3>امکان سفارش ترکیبی</h3><p>می‌توانی چند خدمت را انتخاب کنی و برای اجرای ترکیبی درخواست قیمت بدهی.</p></article>
+      <article class="condition" data-reveal style="--delay:240ms"><div class="condition-icon">✓</div><h3>توافق پیش از شروع</h3><p>محدوده دقیق کار، هزینه نهایی و زمان تحویل قبل از شروع تأیید می‌شود.</p></article>
+    </div>
+  </div>
+</section>
 
-      /* FILTER */
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          filterButtons.forEach((item) => item.classList.remove("active"));
-          button.classList.add("active");
-          activeCategory = button.dataset.filter;
-          renderServices();
-        });
-      });
+<section class="final-cta"><div class="container"><div class="cta-box" data-reveal><span class="section-kicker">LET'S GET STARTED</span><h2>برای ارتقای فروشگاهت آماده‌ای؟</h2><p>فروشگاهت را معرفی کن و قابلیت‌های موردنظرت را انتخاب کن. برای بررسی شرایط فنی، دریافت مشاوره و اطلاع از هزینه اجرای خدمات از راه‌های ارتباطی زیر با من در تماس باش.</p><div class="cta-actions"><a href="https://t.me/Zenix_Web" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><span>✈</span> پیام در تلگرام</a><a href="tel:+989366712403" class="btn cta-phone" dir="ltr"><span>☎</span> +98 936 671 2403</a></div></div></div></section>
 
-      /* INITIAL RENDER */
-      renderServices();
-    </script>
-  </body>
+<footer class="footer"><div class="container footer-inner">
+  <div class="footer-brand-area"><div class="footer-brand">ARSAM <span>SAMADIAN</span></div><div class="footer-copy">طراحی و توسعه وب | Zenix Web Services</div></div>
+  <div class="footer-social-area"><span class="social-title">من را در شبکه‌های اجتماعی دنبال کنید:</span><div class="footer-socials">
+    <a class="social-link social-instagram" href="https://www.instagram.com/arsam_samadian?igsi=d29seTI0bHkwOXZ5" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a class="social-link social-linkedin" href="https://www.linkedin.com/in/arsam-samadian-037063414?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/></svg></a>
+    <a class="social-link social-telegram" href="https://t.me/Zenix_Web" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 3.16a1.5 1.5 0 0 0-1.58-.23L2.7 9.9c-1.2.48-1.18 1.14-.22 1.44l4.54 1.42 1.74 5.43c.2.6.1.83.73.83.49 0 .71-.22.98-.49l2.2-2.14 4.57 3.38c.84.47 1.45.22 1.66-.78l3-14.1c.31-1.27-.49-1.85-1.26-1.53ZM8.68 12.4l9.01-5.68c.45-.27.87-.13.53.17l-7.45 6.72-.29 3.06-1.8-4.27Z"/></svg></a>
+  </div></div><div class="footer-copy">© 2026 All Rights Reserved</div>
+</div></footer>
+<div class="mobile-cta"><a href="https://t.me/Zenix_Web" target="_blank" rel="noopener">مشاوره و ثبت سفارش در تلگرام ↗</a></div>
+
+<script>
+/* Original list of 25 standard services */
+const services = [
+  {
+    name:"نوار اطلاع‌رسانی بالای سایت",
+    description:"نمایش یک نوار جمع‌وجور در بالای سایت برای اعلام شروع کمپین، تخفیف ویژه یا پیام تبلیغاتی.",
+    price:"۴۵۰٬۰۰۰",time:"۳۵ دقیقه",category:"campaign",label:"کمپین و تبلیغات"
+  },
+  {
+    name:"نوار چسبان مخصوص موبایل",
+    description:"افزودن یک نوار ثابت در پایین صفحه موبایل با پیام تبلیغاتی و لینک مستقیم به محصولات کمپین.",
+    price:"۶۵۰٬۰۰۰",time:"۵۰ دقیقه",category:"design",label:"طراحی و ظاهر"
+  },
+  {
+    name:"بنر اختصاصی بلک فرایدی",
+    description:"طراحی یک بنر تبلیغاتی متناسب با هویت فروشگاه برای استفاده در صفحه اصلی، دسکتاپ و موبایل.",
+    price:"۸۵۰٬۰۰۰",time:"۹۰ دقیقه",category:"design",label:"طراحی و ظاهر"
+  },
+  {
+    name:"لینک ویژه کمپین در منوی سایت",
+    description:"افزودن یک دسترسی مشخص در منوی اصلی برای ورود سریع مشتریان به محصولات بلک فرایدی.",
+    price:"۴۰۰٬۰۰۰",time:"۳۰ دقیقه",category:"campaign",label:"کمپین و تبلیغات"
+  },
+  {
+    name:"بخش محصولات منتخب صفحه اصلی",
+    description:"ایجاد یک سکشن اختصاصی برای نمایش محصولات منتخب و تخفیف‌دار در صفحه اصلی فروشگاه.",
+    price:"۷۵۰٬۰۰۰",time:"۷۵ دقیقه",category:"design",label:"طراحی و ظاهر"
+  },
+  {
+    name:"تایمر شمارش معکوس",
+    description:"قرار دادن یک تایمر در یک بخش مشخص از سایت برای نمایش زمان باقی‌مانده تا پایان کمپین.",
+    price:"۵۵۰٬۰۰۰",time:"۴۵ دقیقه",category:"campaign",label:"کمپین و تبلیغات"
+  },
+  {
+    name:"پاپ‌آپ پیشنهاد ویژه",
+    description:"تنظیم یک پنجره تبلیغاتی برای نمایش پیشنهاد کمپین هنگام ورود یا پس از چند ثانیه حضور کاربر.",
+    price:"۸۰۰٬۰۰۰",time:"۷۵ دقیقه",category:"campaign",label:"کمپین و تبلیغات"
+  },
+  {
+    name:"برچسب درصد تخفیف محصولات",
+    description:"نمایش درصد تخفیف محصولات به شکل یک برچسب هماهنگ و خوانا روی تصاویر محصول.",
+    price:"۵۵۰٬۰۰۰",time:"۴۵ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"برچسب متنی پیشنهاد ویژه",
+    description:"افزودن برچسب‌هایی مانند پرفروش، پیشنهاد ویژه یا منتخب کمپین به محصولات مشخص.",
+    price:"۴۵۰٬۰۰۰",time:"۳۵ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"هماهنگ‌سازی رنگ و دکمه‌های کمپین",
+    description:"تغییر رنگ و ظاهر دکمه‌ها، لینک‌ها و المان‌های منتخب برای هماهنگی با کمپین تبلیغاتی.",
+    price:"۶۵۰٬۰۰۰",time:"۶۰ دقیقه",category:"design",label:"طراحی و ظاهر"
+  },
+  {
+    name:"صفحه جمع‌وجور اختصاصی کمپین",
+    description:"ساخت یک صفحه فرود ساده با استفاده از چیدمان‌های آماده و بخش‌های محدود معرفی پیشنهادها.",
+    price:"۱٬۳۵۰٬۰۰۰",time:"۱۲۰ دقیقه",category:"design",label:"طراحی و ظاهر"
+  },
+  {
+    name:"کارت کد تخفیف با دکمه کپی",
+    description:"طراحی یک کارت تبلیغاتی در سایت که کد تخفیف را نمایش دهد و امکان کپی سریع آن را فراهم کند.",
+    price:"۶۵۰٬۰۰۰",time:"۶۰ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"ایجاد و تنظیم کوپن ووکامرس",
+    description:"ساخت و تنظیم یک کد تخفیف در ووکامرس با تاریخ اعتبار و محدودیت‌های مشخص.",
+    price:"۴۵۰٬۰۰۰",time:"۳۵ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"نوار پیشرفت ارسال رایگان",
+    description:"نمایش مبلغ باقی‌مانده تا رسیدن سبد خرید به حداقل مبلغ تعیین‌شده برای ارسال رایگان.",
+    price:"۹۵۰٬۰۰۰",time:"۹۰ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"پیشنهاد محصولات مکمل در سبد خرید",
+    description:"انتخاب و نمایش چند محصول مکمل یا مرتبط در بخش سبد خرید با استفاده از امکانات موجود سایت.",
+    price:"۶۵۰٬۰۰۰",time:"۶۰ دقیقه",category:"experience",label:"تجربه خرید"
+  },
+  {
+    name:"تخفیف پلکانی ساده",
+    description:"تنظیم حداکثر دو سطح تخفیف بر اساس تعداد یا مبلغ خرید، با استفاده از افزونه سازگار موجود.",
+    price:"۱٬۱۰۰٬۰۰۰",time:"۹۰ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"هدیه همراه خرید",
+    description:"تنظیم یک پیشنهاد هدیه برای سفارش‌های واجد شرایط، با استفاده از افزونه سازگار موجود.",
+    price:"۱٬۱۰۰٬۰۰۰",time:"۹۰ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"اعلان حداقل مبلغ سفارش",
+    description:"نمایش یک پیام کوتاه در سبد خرید برای اطلاع‌رسانی درباره حداقل مبلغ موردنیاز سفارش.",
+    price:"۵۵۰٬۰۰۰",time:"۴۵ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"اطلاع‌رسانی روش پرداخت و ارسال",
+    description:"نمایش یک پیام یا نوار اطلاع‌رسانی درباره شرایط ارسال، پرداخت یا مزایای خرید در مرحله تسویه.",
+    price:"۴۵۰٬۰۰۰",time:"۳۵ دقیقه",category:"experience",label:"تجربه خرید"
+  },
+  {
+    name:"آیکون مزایای خرید کنار دکمه سفارش",
+    description:"نمایش چند مزیت کوتاه مثل ضمانت اصالت، پشتیبانی یا ارسال سریع در نزدیکی دکمه خرید.",
+    price:"۶۰۰٬۰۰۰",time:"۵۰ دقیقه",category:"experience",label:"تجربه خرید"
+  },
+  {
+    name:"اطلاعات ارسال و مرجوعی محصول",
+    description:"افزودن متن کوتاه و منظم درباره شرایط ارسال و بازگشت کالا در صفحه محصول.",
+    price:"۵۵۰٬۰۰۰",time:"۴۵ دقیقه",category:"experience",label:"تجربه خرید"
+  },
+  {
+    name:"بخش پرسش و پاسخ محصول",
+    description:"ساخت یک بخش آکاردئونی برای نمایش حداکثر پنج پرسش و پاسخ آماده در صفحه محصول یا کمپین.",
+    price:"۶۵۰٬۰۰۰",time:"۶۰ دقیقه",category:"experience",label:"تجربه خرید"
+  },
+  {
+    name:"پیام اختصاصی سبد و تسویه",
+    description:"افزودن یک پیام کوتاه برای یادآوری کد تخفیف، شرایط ارسال یا پیشنهاد ویژه در سبد خرید.",
+    price:"۴۰۰٬۰۰۰",time:"۳۰ دقیقه",category:"experience",label:"تجربه خرید"
+  },
+  {
+    name:"نمایش موجودی محصول",
+    description:"فعال‌سازی و تنظیم نمایش وضعیت یا تعداد موجودی محصولات با استفاده از قابلیت‌های ووکامرس.",
+    price:"۵۵۰٬۰۰۰",time:"۴۵ دقیقه",category:"sales",label:"فروش و تخفیف"
+  },
+  {
+    name:"بخش محصولات مشاهده‌شده اخیر",
+    description:"نمایش یک بخش کوچک از محصولاتی که کاربر اخیراً مشاهده کرده است، با امکانات موجود قالب یا افزونه.",
+    price:"۷۵۰٬۰۰۰",time:"۷۵ دقیقه",category:"experience",label:"تجربه خرید"
+  }
+];
+
+const grid = document.getElementById('servicesGrid');
+const searchInput = document.getElementById('serviceSearch');
+const resultCount = document.getElementById('resultCount');
+const emptyState = document.getElementById('emptyState');
+const filterButtons = document.querySelectorAll('.filter-btn');
+let activeCategory = 'all';
+const persianNumbers = value => Number(value).toLocaleString('fa-IR');
+
+function observeReveals(root = document){
+  const nodes = root.querySelectorAll('[data-reveal]:not(.is-visible)');
+  if (!('IntersectionObserver' in window)) { nodes.forEach(node => node.classList.add('is-visible')); return; }
+  nodes.forEach(node => revealObserver.observe(node));
+}
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -45px 0px'});
+
+function renderServices(){
+  const query = searchInput.value.trim().toLocaleLowerCase('fa');
+  const filtered = services.filter(service => {
+    const matchesText = service.name.toLocaleLowerCase('fa').includes(query) || service.description.toLocaleLowerCase('fa').includes(query);
+    const matchesCategory = activeCategory === 'all' || service.category === activeCategory;
+    return matchesText && matchesCategory;
+  });
+  grid.innerHTML = filtered.map(service => {
+    const originalIndex = services.indexOf(service);
+    return `<article class="service-card" data-reveal style="--delay:${(originalIndex % 4) * 55}ms">
+      <div class="card-top"><span class="card-number">${persianNumbers(originalIndex + 1)}</span><span class="card-category">${service.label}</span></div>
+      <h3>${service.name}</h3><p>${service.description}</p>
+      <div class="card-meta"><span class="clock-icon">◷</span><span>زمان اجرا: ${service.time}</span></div>
+      <div class="card-bottom"><div><span class="price-label">هزینه اجرای پایه</span><div class="card-price">${service.price} <small>تومان</small></div></div><a class="card-order" href="https://t.me/Zenix_Web" target="_blank" rel="noopener noreferrer">سفارش خدمت ↗</a></div>
+    </article>`;
+  }).join('');
+  resultCount.textContent = persianNumbers(filtered.length) + ' خدمت';
+  emptyState.style.display = filtered.length === 0 ? 'block' : 'none';
+  observeReveals(grid);
+}
+searchInput.addEventListener('input',renderServices);
+filterButtons.forEach(button => button.addEventListener('click',() => {
+  filterButtons.forEach(item => item.classList.remove('active'));
+  button.classList.add('active');activeCategory = button.dataset.filter;renderServices();
+}));
+
+/* Scroll-linked motion: progress, sticky navigation and subtle hero parallax */
+const progressBar = document.getElementById('scrollProgressBar');
+const topNav = document.getElementById('topNav');
+const heroStage = document.getElementById('heroStage');
+let scrollTicking = false;
+function updateScrollEffects(){
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (scrollable > 0 ? (scrollTop / scrollable) * 100 : 0) + '%';
+  topNav.classList.toggle('scrolled',scrollTop > 25);
+  if (heroStage && window.innerWidth > 780) heroStage.style.setProperty('--hero-shift',(-Math.min(scrollTop * .12,85)) + 'px');
+  scrollTicking = false;
+}
+window.addEventListener('scroll',() => {if(!scrollTicking){window.requestAnimationFrame(updateScrollEffects);scrollTicking = true;}},{passive:true});
+window.addEventListener('resize',updateScrollEffects,{passive:true});
+
+/* Active section state in navigation */
+const navLinks = [...document.querySelectorAll('.nav-links a')];
+const pageSections = [...document.querySelectorAll('#services,#golden,#packages,#conditions')];
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(link => link.classList.toggle('active',link.getAttribute('href') === '#' + entry.target.id));
+    });
+  },{rootMargin:'-35% 0px -55% 0px'});
+  pageSections.forEach(section => sectionObserver.observe(section));
+}
+
+renderServices();
+observeReveals();
+updateScrollEffects();
+</script>
+</body>
 </html>
